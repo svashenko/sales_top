@@ -1,0 +1,6196 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Kardipal</title>
+  <link rel="icon" href="images/ico.png" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <link rel="stylesheet" type="text/css" href="css/head.css" media="all" />
+  <link rel="preload" href="fonts/Velino-Sans-Bold.25a1f31f.woff2" as="font" crossorigin="" />
+  <link rel="preload" href="fonts/Velino-Sans-Book.79a4c056.woff2" as="font" crossorigin="" />
+  <link rel="preload" href="fonts/VelinoHeadline-Book.e9512e16.woff2" as="font" crossorigin="" />
+  <link rel="preload" href="fonts/VelinoText-Book.2fa2ca95.woff2" as="font" crossorigin="" />
+  <link rel="stylesheet" type="text/css" href="css/index.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.css" media="all" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/masked.js"></script>
+  <script type="text/javascript">
+    $(function ($) {
+      $("#phone").mask("+38(111)111-11-11");
+    });
+  </script>
+
+  <style>
+    ul li {
+      list-style: none;
+    }
+
+    .comment_modal #order_form {
+      display: initial !important;
+    }
+
+    @media screen and (max-width: 1019px) {
+      .base {
+        width: calc(100%) !important;
+        margin-left: 0px !important;
+      }
+    }
+
+    .Wheel_input {
+      padding: 10px !important;
+      display: block !important;
+      margin: 0 auto !important;
+      padding: 10px !important;
+      width: 100% !important;
+      border: 2px solid grey !important;
+      border-radius: 5px !important;
+      max-width: 382px;
+    }
+
+    .time_remains {
+      font-size: 1.1em;
+      color: red;
+      font-weight: 700;
+    }
+
+    .main-link {
+      display: block;
+      margin: 20px auto;
+      padding: 20px;
+      font-size: 20px;
+      text-decoration: none;
+      background-color: #de0606;
+      text-align: center;
+      color: #fff !important;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .sweet-alert,
+    .sweet-overlay {
+      position: fixed;
+      display: none;
+    }
+
+    .instructions {
+      text-align: center;
+    }
+
+    .boxes,
+    .boxes cbox,
+    .boxes img {
+      width: 100%;
+    }
+
+    .instructions {
+      padding: 8px;
+      background-color: #232f3e;
+      border-radius: 4px;
+      color: #fff;
+      margin-top: 20px;
+    }
+
+    .boxes {
+      margin: 10px 0;
+    }
+
+    .box-o-t {
+      position: absolute;
+      top: -34%;
+    }
+
+    .boxes .discover .box-o-b {
+      z-index: 1;
+      position: relative;
+    }
+
+    .boxes .iphone {
+      width: 76%;
+      height: auto;
+      position: absolute;
+      z-index: 0;
+      top: -20%;
+      left: 12%;
+      -webkit-transition-duration: 0.7s;
+      transition-duration: 0.7s;
+    }
+
+    .boxes .discover>.iphone {
+      top: -60%;
+    }
+
+    .boxes>div {
+      position: relative;
+      display: inline-block;
+      width: 32.5%;
+      -webkit-transition-duration: 0.2s;
+      transition-duration: 0.2s;
+      cursor: pointer;
+    }
+
+    .boxes>div:hover {
+      -webkit-transform: scale(1.1, 1.1);
+      transform: scale(1.1, 1.1);
+    }
+
+    .instructions table {
+      width: 100%;
+    }
+
+    .instructions td:first-child {
+      padding-right: 10px;
+      width: 10px;
+    }
+
+    .instructions td:last-child {
+      padding-left: 10px;
+      width: 10px;
+    }
+
+    @media (max-width: 479px) {
+      .boxes>div {
+        width: 32%;
+      }
+    }
+
+    @media (max-width: 319px) {
+      .boxes>div {
+        width: 48%;
+      }
+    }
+
+    .sweet-overlay {
+      background-color: #000;
+      -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+      background-color: rgba(0, 0, 0, 0.4);
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 10000;
+    }
+
+    .sweet-alert {
+      background-color: #fff;
+      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial,
+        sans-serif;
+      width: 478px;
+      padding: 17px;
+      border-radius: 5px;
+      text-align: center;
+      left: 50%;
+      top: 35%;
+      margin-left: -256px;
+      margin-top: -150px;
+      overflow: hidden;
+      z-index: 99999;
+    }
+
+    @media all and (max-width: 540px) {
+      .sweet-alert {
+        width: auto;
+        margin-left: 0;
+        margin-right: 0;
+        left: 15px;
+        right: 15px;
+      }
+    }
+
+    .sweet-alert h2 {
+      color: #575757;
+      font-size: 25px;
+      text-align: center;
+      font-weight: 600;
+      text-transform: none;
+      position: relative;
+      margin: 10px 0;
+      padding: 0;
+      line-height: 40px;
+      display: block;
+    }
+
+    .sweet-alert p {
+      color: #797979;
+      font-size: 15px;
+      font-weight: 300;
+      position: relative;
+      text-align: inherit;
+      float: none;
+      margin: 0;
+      padding: 0;
+      line-height: normal;
+    }
+
+    .sweet-alert .la-ball-fall {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -27px;
+      margin-top: 4px;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .search-img {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+    }
+
+    .sweet-alert button {
+      background-color: #e84242;
+      color: #fff;
+      border: none;
+      box-shadow: none;
+      font-size: 17px;
+      font-weight: 500;
+      -webkit-border-radius: 4px;
+      border-radius: 5px;
+      padding: 10px 32px;
+      margin: 26px 5px 0;
+      cursor: pointer;
+    }
+
+    .sweet-alert button:focus {
+      outline: 0;
+      box-shadow: 0 0 2px rgba(128, 179, 235, 0.5),
+        inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+    }
+
+    .sweet-alert button:hover {
+      background-color: #7ecff4;
+    }
+
+    .sweet-alert button:active {
+      background-color: #5dc2f1;
+    }
+
+    .sweet-alert button::-moz-focus-inner {
+      border: 0;
+    }
+
+    .sweet-alert .sa-icon {
+      width: 80px;
+      height: 80px;
+      border: 4px solid gray;
+      -webkit-border-radius: 40px;
+      border-radius: 50%;
+      margin: 20px auto;
+      padding: 0;
+      position: relative;
+      box-sizing: content-box;
+    }
+
+    .sweet-alert .sa-icon.sa-success {
+      border-color: #a5dc86;
+    }
+
+    .sweet-alert .sa-icon.sa-success::after,
+    .sweet-alert .sa-icon.sa-success::before {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 120px;
+      background: #fff;
+    }
+
+    .sweet-alert .sa-icon.sa-success::before {
+      -webkit-border-radius: 120px 0 0 120px;
+      border-radius: 120px 0 0 120px;
+      top: -7px;
+      left: -33px;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-transform-origin: 60px 60px;
+      transform-origin: 60px 60px;
+    }
+
+    .sweet-alert .sa-icon.sa-success::after {
+      -webkit-border-radius: 0 120px 120px 0;
+      border-radius: 0 120px 120px 0;
+      top: -11px;
+      left: 30px;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-transform-origin: 0 60px;
+      transform-origin: 0 60px;
+    }
+
+    .sweet-alert .sa-icon.sa-success .sa-placeholder {
+      width: 80px;
+      height: 80px;
+      border: 4px solid rgba(165, 220, 134, 0.2);
+      -webkit-border-radius: 40px;
+      border-radius: 50%;
+      box-sizing: content-box;
+      position: absolute;
+      left: -4px;
+      top: -4px;
+      z-index: 2;
+    }
+
+    .sweet-alert .sa-icon.sa-success .sa-fix {
+      width: 5px;
+      height: 90px;
+      background-color: #fff;
+      position: absolute;
+      left: 28px;
+      top: 8px;
+      z-index: 1;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+
+    .sweet-alert .sa-icon.sa-success .sa-line {
+      height: 5px;
+      background-color: #a5dc86;
+      display: block;
+      border-radius: 2px;
+      position: absolute;
+      z-index: 2;
+    }
+
+    .sweet-alert .sa-icon.sa-success .sa-line.sa-tip {
+      width: 25px;
+      left: 14px;
+      top: 46px;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    .sweet-alert .sa-icon.sa-success .sa-line.sa-long {
+      width: 47px;
+      right: 8px;
+      top: 38px;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+
+    @-webkit-keyframes showSweetAlert {
+      0% {
+        transform: scale(0.7);
+        -webkit-transform: scale(0.7);
+      }
+
+      45% {
+        transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+      }
+
+      80% {
+        transform: scale(0.95);
+        -webkit-transform: scale(0.95);
+      }
+
+      100% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+      }
+    }
+
+    @keyframes showSweetAlert {
+      0% {
+        transform: scale(0.7);
+        -webkit-transform: scale(0.7);
+      }
+
+      45% {
+        transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+      }
+
+      80% {
+        transform: scale(0.95);
+        -webkit-transform: scale(0.95);
+      }
+
+      100% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+      }
+    }
+
+    @-webkit-keyframes hideSweetAlert {
+      0% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+      }
+
+      100% {
+        transform: scale(0.5);
+        -webkit-transform: scale(0.5);
+      }
+    }
+
+    @keyframes hideSweetAlert {
+      0% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+      }
+
+      100% {
+        transform: scale(0.5);
+        -webkit-transform: scale(0.5);
+      }
+    }
+
+    @-webkit-keyframes slideFromTop {
+      0% {
+        top: 0;
+      }
+
+      100% {
+        top: 50%;
+      }
+    }
+
+    @keyframes slideFromTop {
+      0% {
+        top: 0;
+      }
+
+      100% {
+        top: 50%;
+      }
+    }
+
+    @-webkit-keyframes slideToTop {
+      0% {
+        top: 50%;
+      }
+
+      100% {
+        top: 0;
+      }
+    }
+
+    @keyframes slideToTop {
+      0% {
+        top: 50%;
+      }
+
+      100% {
+        top: 0;
+      }
+    }
+
+    @-webkit-keyframes slideFromBottom {
+      0% {
+        top: 70%;
+      }
+
+      100% {
+        top: 50%;
+      }
+    }
+
+    @keyframes slideFromBottom {
+      0% {
+        top: 70%;
+      }
+
+      100% {
+        top: 50%;
+      }
+    }
+
+    @-webkit-keyframes slideToBottom {
+      0% {
+        top: 50%;
+      }
+
+      100% {
+        top: 70%;
+      }
+    }
+
+    @keyframes slideToBottom {
+      0% {
+        top: 50%;
+      }
+
+      100% {
+        top: 70%;
+      }
+    }
+
+    @-webkit-keyframes animateSuccessTip {
+
+      0%,
+      54% {
+        width: 0;
+        left: 1px;
+        top: 19px;
+      }
+
+      70% {
+        width: 50px;
+        left: -8px;
+        top: 37px;
+      }
+
+      84% {
+        width: 17px;
+        left: 21px;
+        top: 48px;
+      }
+
+      100% {
+        width: 25px;
+        left: 14px;
+        top: 45px;
+      }
+    }
+
+    @keyframes animateSuccessTip {
+
+      0%,
+      54% {
+        width: 0;
+        left: 1px;
+        top: 19px;
+      }
+
+      70% {
+        width: 50px;
+        left: -8px;
+        top: 37px;
+      }
+
+      84% {
+        width: 17px;
+        left: 21px;
+        top: 48px;
+      }
+
+      100% {
+        width: 25px;
+        left: 14px;
+        top: 45px;
+      }
+    }
+
+    @-webkit-keyframes animateSuccessLong {
+
+      0%,
+      65% {
+        width: 0;
+        right: 46px;
+        top: 54px;
+      }
+
+      84% {
+        width: 55px;
+        right: 0;
+        top: 35px;
+      }
+
+      100% {
+        width: 47px;
+        right: 8px;
+        top: 38px;
+      }
+    }
+
+    @keyframes animateSuccessLong {
+
+      0%,
+      65% {
+        width: 0;
+        right: 46px;
+        top: 54px;
+      }
+
+      84% {
+        width: 55px;
+        right: 0;
+        top: 35px;
+      }
+
+      100% {
+        width: 47px;
+        right: 8px;
+        top: 38px;
+      }
+    }
+
+    @-webkit-keyframes rotatePlaceholder {
+
+      0%,
+      5% {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
+
+      100%,
+      12% {
+        transform: rotate(-405deg);
+        -webkit-transform: rotate(-405deg);
+      }
+    }
+
+    @keyframes rotatePlaceholder {
+
+      0%,
+      5% {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
+
+      100%,
+      12% {
+        transform: rotate(-405deg);
+        -webkit-transform: rotate(-405deg);
+      }
+    }
+
+    .animateSuccessTip {
+      -webkit-animation: animateSuccessTip 0.75s;
+      animation: animateSuccessTip 0.75s;
+    }
+
+    .animateSuccessLong {
+      -webkit-animation: animateSuccessLong 0.75s;
+      animation: animateSuccessLong 0.75s;
+    }
+
+    .sa-icon.sa-success.animate::after {
+      -webkit-animation: rotatePlaceholder 4.25s ease-in;
+      animation: rotatePlaceholder 4.25s ease-in;
+    }
+
+    @-webkit-keyframes animateErrorIcon {
+      0% {
+        transform: rotateX(100deg);
+        -webkit-transform: rotateX(100deg);
+        opacity: 0;
+      }
+
+      100% {
+        transform: rotateX(0);
+        -webkit-transform: rotateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes animateErrorIcon {
+      0% {
+        transform: rotateX(100deg);
+        -webkit-transform: rotateX(100deg);
+        opacity: 0;
+      }
+
+      100% {
+        transform: rotateX(0);
+        -webkit-transform: rotateX(0);
+        opacity: 1;
+      }
+    }
+
+    .animateErrorIcon {
+      -webkit-animation: animateErrorIcon 0.5s;
+      animation: animateErrorIcon 0.5s;
+    }
+
+    @-webkit-keyframes animateXMark {
+
+      0%,
+      50% {
+        transform: scale(0.4);
+        -webkit-transform: scale(0.4);
+        margin-top: 26px;
+        opacity: 0;
+      }
+
+      80% {
+        transform: scale(1.15);
+        -webkit-transform: scale(1.15);
+        margin-top: -6px;
+      }
+
+      100% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        margin-top: 0;
+        opacity: 1;
+      }
+    }
+
+    @keyframes animateXMark {
+
+      0%,
+      50% {
+        transform: scale(0.4);
+        -webkit-transform: scale(0.4);
+        margin-top: 26px;
+        opacity: 0;
+      }
+
+      80% {
+        transform: scale(1.15);
+        -webkit-transform: scale(1.15);
+        margin-top: -6px;
+      }
+
+      100% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        margin-top: 0;
+        opacity: 1;
+      }
+    }
+
+    .animateXMark {
+      -webkit-animation: animateXMark 0.5s;
+      animation: animateXMark 0.5s;
+    }
+
+    @-webkit-keyframes pulseWarning {
+      0% {
+        border-color: #f8d486;
+      }
+
+      100% {
+        border-color: #f8bb86;
+      }
+    }
+
+    @keyframes pulseWarning {
+      0% {
+        border-color: #f8d486;
+      }
+
+      100% {
+        border-color: #f8bb86;
+      }
+    }
+
+    @-webkit-keyframes pulseWarningIns {
+      0% {
+        background-color: #f8d486;
+      }
+
+      100% {
+        background-color: #f8bb86;
+      }
+    }
+
+    @keyframes pulseWarningIns {
+      0% {
+        background-color: #f8d486;
+      }
+
+      100% {
+        background-color: #f8bb86;
+      }
+    }
+
+    @-webkit-keyframes rotate-loading {
+      0% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes rotate-loading {
+      0% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .sweet-alert .sa-icon.sa-success {
+      border-color: transparent \9;
+    }
+
+    .sweet-alert .sa-icon.sa-success .sa-line.sa-tip {
+      -ms-transform: rotate(45deg) \9;
+    }
+
+    .sweet-alert .sa-icon.sa-success .sa-line.sa-long {
+      -ms-transform: rotate(-45deg) \9;
+    }
+
+    .la-ball-fall {
+      font-size: 0;
+      color: #fff;
+      width: 54px;
+      height: 18px;
+    }
+
+    @-webkit-keyframes ball-fall {
+      0% {
+        opacity: 0;
+        -webkit-transform: translateY(-145%);
+        transform: translateY(-145%);
+      }
+
+      10%,
+      90% {
+        opacity: 0.5;
+      }
+
+      20%,
+      80% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+
+      100% {
+        opacity: 0;
+        -webkit-transform: translateY(145%);
+        transform: translateY(145%);
+      }
+    }
+
+    @-moz-keyframes ball-fall {
+      0% {
+        opacity: 0;
+        -moz-transform: translateY(-145%);
+        transform: translateY(-145%);
+      }
+
+      10%,
+      90% {
+        opacity: 0.5;
+      }
+
+      20%,
+      80% {
+        opacity: 1;
+        -moz-transform: translateY(0);
+        transform: translateY(0);
+      }
+
+      100% {
+        opacity: 0;
+        -moz-transform: translateY(145%);
+        transform: translateY(145%);
+      }
+    }
+
+    @-o-keyframes ball-fall {
+      0% {
+        opacity: 0;
+        -o-transform: translateY(-145%);
+        transform: translateY(-145%);
+      }
+
+      10%,
+      90% {
+        opacity: 0.5;
+      }
+
+      20%,
+      80% {
+        opacity: 1;
+        -o-transform: translateY(0);
+        transform: translateY(0);
+      }
+
+      100% {
+        opacity: 0;
+        -o-transform: translateY(145%);
+        transform: translateY(145%);
+      }
+    }
+
+    @keyframes ball-fall {
+      0% {
+        opacity: 0;
+        -webkit-transform: translateY(-145%);
+        -moz-transform: translateY(-145%);
+        -o-transform: translateY(-145%);
+        transform: translateY(-145%);
+      }
+
+      10%,
+      90% {
+        opacity: 0.5;
+      }
+
+      20%,
+      80% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -o-transform: translateY(0);
+        transform: translateY(0);
+      }
+
+      100% {
+        opacity: 0;
+        -webkit-transform: translateY(145%);
+        -moz-transform: translateY(145%);
+        -o-transform: translateY(145%);
+        transform: translateY(145%);
+      }
+    }
+
+    .animated.animated.bounceIn,
+    .animated.animated.flipOutX,
+    .animated @-webkit-keyframes bounce {
+
+      0%,
+      100%,
+      20%,
+      53%,
+      80% {
+        -webkit-animation-timing-function: cubic-bezier(0.215,
+            0.61,
+            0.355,
+            1);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+
+      40%,
+      43% {
+        -webkit-animation-timing-function: cubic-bezier(0.755,
+            0.05,
+            0.855,
+            0.06);
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        -webkit-transform: translate3d(0, -30px, 0);
+        transform: translate3d(0, -30px, 0);
+      }
+
+      70% {
+        -webkit-animation-timing-function: cubic-bezier(0.755,
+            0.05,
+            0.855,
+            0.06);
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        -webkit-transform: translate3d(0, -15px, 0);
+        transform: translate3d(0, -15px, 0);
+      }
+
+      90% {
+        -webkit-transform: translate3d(0, -4px, 0);
+        transform: translate3d(0, -4px, 0);
+      }
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100%,
+      20%,
+      53%,
+      80% {
+        -webkit-animation-timing-function: cubic-bezier(0.215,
+            0.61,
+            0.355,
+            1);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+
+      40%,
+      43% {
+        -webkit-animation-timing-function: cubic-bezier(0.755,
+            0.05,
+            0.855,
+            0.06);
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        -webkit-transform: translate3d(0, -30px, 0);
+        transform: translate3d(0, -30px, 0);
+      }
+
+      70% {
+        -webkit-animation-timing-function: cubic-bezier(0.755,
+            0.05,
+            0.855,
+            0.06);
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        -webkit-transform: translate3d(0, -15px, 0);
+        transform: translate3d(0, -15px, 0);
+      }
+
+      90% {
+        -webkit-transform: translate3d(0, -4px, 0);
+        transform: translate3d(0, -4px, 0);
+      }
+    }
+
+    .bounce {
+      -webkit-animation-name: bounce;
+      animation-name: bounce;
+      -webkit-transform-origin: center bottom;
+      transform-origin: center bottom;
+    }
+
+    @-webkit-keyframes bounceIn {
+
+      0%,
+      100%,
+      20%,
+      40%,
+      60%,
+      80% {
+        -webkit-animation-timing-function: cubic-bezier(0.215,
+            0.61,
+            0.355,
+            1);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+
+      0% {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+      }
+
+      20% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1);
+        transform: scale3d(1.1, 1.1, 1.1);
+      }
+
+      40% {
+        -webkit-transform: scale3d(0.9, 0.9, 0.9);
+        transform: scale3d(0.9, 0.9, 0.9);
+      }
+
+      60% {
+        opacity: 1;
+        -webkit-transform: scale3d(1.03, 1.03, 1.03);
+        transform: scale3d(1.03, 1.03, 1.03);
+      }
+
+      80% {
+        -webkit-transform: scale3d(0.97, 0.97, 0.97);
+        transform: scale3d(0.97, 0.97, 0.97);
+      }
+
+      100% {
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+      }
+    }
+
+    @keyframes bounceIn {
+
+      0%,
+      100%,
+      20%,
+      40%,
+      60%,
+      80% {
+        -webkit-animation-timing-function: cubic-bezier(0.215,
+            0.61,
+            0.355,
+            1);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+
+      0% {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+      }
+
+      20% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1);
+        transform: scale3d(1.1, 1.1, 1.1);
+      }
+
+      40% {
+        -webkit-transform: scale3d(0.9, 0.9, 0.9);
+        transform: scale3d(0.9, 0.9, 0.9);
+      }
+
+      60% {
+        opacity: 1;
+        -webkit-transform: scale3d(1.03, 1.03, 1.03);
+        transform: scale3d(1.03, 1.03, 1.03);
+      }
+
+      80% {
+        -webkit-transform: scale3d(0.97, 0.97, 0.97);
+        transform: scale3d(0.97, 0.97, 0.97);
+      }
+
+      100% {
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+      }
+    }
+
+    .bounceIn {
+      -webkit-animation-name: bounceIn;
+      animation-name: bounceIn;
+    }
+
+    .la-ball-fall,
+    .visible {
+      display: block;
+    }
+
+    .opentry {
+      display: none;
+    }
+
+    .order_block img {
+      width: 80% !important;
+      max-width: 320px;
+    }
+
+    .order_block {
+      display: none;
+    }
+
+    .boxtext {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      color: #ff0000;
+      font-size: 25px;
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    @media screen and (max-width: 800px) {
+      .boxtext {
+        font-size: 23px;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .boxtext {
+        font-size: 20px;
+      }
+    }
+
+    @media screen and (max-width: 360px) {
+      .boxtext {
+        font-size: 18px;
+      }
+    }
+
+    #countdown {
+      text-align: center;
+    }
+
+    #countdown li {
+      color: red;
+    }
+
+    .main-link span {
+      display: inline !important;
+    }
+
+    .country_select {
+      moz-appearance: none !important;
+      -webkit-appearance: none !important;
+      background: none;
+    }
+
+    .new-comebacker-wrapp .new-comebacker-btn {
+      height: 60px;
+      width: 280px;
+      display: block;
+      color: #ffffff;
+      font-size: 22px;
+      line-height: 57px;
+      font-weight: 700;
+      margin: 20px auto 0;
+      background: #7abf01;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    #countdown li,
+    #countdown-modal li {
+      color: red;
+    }
+
+    .comTitle {
+      padding: 5px 10px;
+      margin-top: 50px;
+      color: rgb(0, 0, 0);
+      border-bottom: 2px black solid;
+      font-size: 27px;
+      text-align: center;
+    }
+
+    .photo img {
+      margin: 3px 0px 0px;
+    }
+
+    img.im15 {
+      margin: 10px auto;
+      display: block;
+    }
+
+    .photo {
+      float: left;
+      margin-right: 10px;
+    }
+
+    .com-txt {
+      padding-left: 90px;
+      text-align: left;
+      color: black;
+    }
+
+    .commit-text {
+      margin-top: 25px;
+    }
+
+    img.photo-people {
+      width: 75px;
+      border-radius: 50px;
+    }
+
+    .clear {
+      clear: both;
+    }
+
+    html {
+      font-family: sans-serif;
+      -ms-text-size-adjust: 100%;
+      -moz-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0px;
+    }
+
+    article,
+    header {
+      display: block;
+    }
+
+    a {
+      background-color: transparent;
+    }
+
+    a:active,
+    a:hover {
+      outline: 0px none;
+    }
+
+    b {
+      font-weight: bold;
+    }
+
+    img {
+      border: 0px none;
+    }
+
+    hr {
+      box-sizing: content-box;
+      height: 0px;
+    }
+
+    button,
+    input {
+      color: inherit;
+      font: inherit;
+      margin: 0px;
+    }
+
+    button {
+      overflow: visible;
+    }
+
+    button {
+      text-transform: none;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    button::-moz-focus-inner,
+    input::-moz-focus-inner {
+      border: 0px none;
+      padding: 0px;
+    }
+
+    input {
+      line-height: normal;
+    }
+
+    @media print {
+
+      *,
+      *::before,
+      *::after {
+        background: transparent none repeat scroll 0% 0% !important;
+        color: rgb(0, 0, 0) !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+      }
+
+      a,
+      a:visited {
+        text-decoration: underline;
+      }
+
+      a[href]::after {
+        content: ' (' attr(href) ')';
+      }
+
+      img {
+        page-break-inside: avoid;
+      }
+
+      img {
+        max-width: 100% !important;
+      }
+
+      h2,
+      h3 {
+        page-break-after: avoid;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 10px;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      line-height: 1.42857;
+      color: rgb(68, 68, 68);
+      background-color: #eaeaea;
+    }
+
+    input,
+    button {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+    }
+
+    a {
+      color: rgb(51, 122, 183);
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      color: rgb(35, 82, 124);
+      text-decoration: underline;
+    }
+
+    a:focus {
+      outline: thin dotted;
+      outline-offset: -2px;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    hr {
+      margin-top: 17px;
+      margin-bottom: 17px;
+      border-width: 1px 0px 0px;
+      border-style: solid none none;
+      border-color: rgb(238, 238, 238) currentcolor currentcolor;
+      -moz-border-top-colors: none;
+      -moz-border-right-colors: none;
+      -moz-border-bottom-colors: none;
+      -moz-border-left-colors: none;
+      border-image: none;
+    }
+
+    h2,
+    h3,
+    h4 {
+      font-family: inherit;
+      font-weight: 500;
+      line-height: 1.1;
+      color: inherit;
+    }
+
+    h2,
+    h3 {
+      margin-top: 17px;
+      margin-bottom: 8.5px;
+    }
+
+    h4 {
+      margin-top: 8.5px;
+      margin-bottom: 8.5px;
+    }
+
+    h2 {
+      font-size: 25px;
+    }
+
+    h3 {
+      font-size: 21px;
+    }
+
+    h4 {
+      font-size: 15px;
+    }
+
+    p {
+      margin: 0px 0px 8.5px;
+    }
+
+    .text-muted {
+      color: rgb(119, 119, 119);
+    }
+
+    ul,
+    ol {
+      margin-top: 0px;
+      margin-bottom: 8.5px;
+    }
+
+    .container {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .container::before,
+    .container::after {
+      content: ' ';
+      display: table;
+    }
+
+    .container::after {
+      clear: both;
+    }
+
+    @media (min-width: 768px) {
+      #scroll-to-boxes {
+        padding: 0px 70px;
+      }
+
+      .container {
+        width: 750px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .container {
+        width: 1180px;
+      }
+    }
+
+    .container-fluid {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .container-fluid::before,
+    .container-fluid::after {
+      content: ' ';
+      display: table;
+    }
+
+    .container-fluid::after {
+      clear: both;
+    }
+
+    .row {
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+
+    .row::before,
+    .row::after {
+      content: ' ';
+      display: table;
+    }
+
+    .row::after {
+      clear: both;
+    }
+
+    .col-md-3,
+    .col-md-9 {
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    @media (min-width: 992px) {
+
+      .col-md-3,
+      .col-md-9 {
+        float: left;
+      }
+
+      .col-md-3 {
+        width: 25%;
+      }
+
+      .col-md-9 {
+        width: 75%;
+      }
+    }
+
+    label {
+      display: inline-block;
+      max-width: 100%;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-bottom: 0px;
+      font-weight: normal;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      background-image: none;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      padding: 6px 12px;
+      font-size: 12px;
+      line-height: 1.42857;
+      border-radius: 4px;
+      -moz-user-select: none;
+    }
+
+    .btn:focus,
+    .btn:active:focus {
+      outline: thin dotted;
+      outline-offset: -2px;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      color: rgb(51, 51, 51);
+      text-decoration: none;
+    }
+
+    .btn:active {
+      outline: 0px none;
+      background-image: none;
+      box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.125) inset;
+    }
+
+    .btn-success {
+      color: rgb(255, 255, 255);
+      background-color: rgb(92, 184, 92);
+      border-color: rgb(76, 174, 76);
+    }
+
+    .btn-success:focus {
+      color: rgb(255, 255, 255);
+      background-color: rgb(68, 157, 68);
+      border-color: rgb(37, 86, 37);
+    }
+
+    .btn-success:hover {
+      color: rgb(255, 255, 255);
+      background-color: rgb(68, 157, 68);
+      border-color: rgb(57, 132, 57);
+    }
+
+    .btn-success:active {
+      color: rgb(255, 255, 255);
+      background-color: rgb(68, 157, 68);
+      border-color: rgb(57, 132, 57);
+    }
+
+    .btn-success:active:hover,
+    .btn-success:active:focus {
+      color: rgb(255, 255, 255);
+      background-color: rgb(57, 132, 57);
+      border-color: rgb(37, 86, 37);
+    }
+
+    .btn-success:active {
+      background-image: none;
+    }
+
+    .btn-success .badge {
+      color: rgb(92, 184, 92);
+      background-color: rgb(255, 255, 255);
+    }
+
+    .btn-danger {
+      color: rgb(255, 255, 255);
+      background-color: rgb(217, 83, 79);
+      border-color: rgb(212, 63, 58);
+    }
+
+    .btn-danger:focus {
+      color: rgb(255, 255, 255);
+      background-color: rgb(201, 48, 44);
+      border-color: rgb(118, 28, 25);
+    }
+
+    .btn-danger:hover {
+      color: rgb(255, 255, 255);
+      background-color: rgb(201, 48, 44);
+      border-color: rgb(172, 41, 37);
+    }
+
+    .btn-danger:active {
+      color: rgb(255, 255, 255);
+      background-color: rgb(201, 48, 44);
+      border-color: rgb(172, 41, 37);
+    }
+
+    .btn-danger:active:hover,
+    .btn-danger:active:focus {
+      color: rgb(255, 255, 255);
+      background-color: rgb(172, 41, 37);
+      border-color: rgb(118, 28, 25);
+    }
+
+    .btn-danger:active {
+      background-image: none;
+    }
+
+    .btn-danger .badge {
+      color: rgb(217, 83, 79);
+      background-color: rgb(255, 255, 255);
+    }
+
+    .btn-sm {
+      padding: 5px 10px;
+      font-size: 11px;
+      line-height: 1.5;
+      border-radius: 3px;
+    }
+
+    .breadcrumb {
+      padding: 8px 15px;
+      margin-bottom: 17px;
+      list-style: outside none none;
+      background-color: rgb(245, 245, 245);
+      border-radius: 4px;
+    }
+
+    .breadcrumb>li {
+      display: inline-block;
+    }
+
+    .breadcrumb>li+li::before {
+      content: '/ ';
+      padding: 0px 5px;
+      color: rgb(204, 204, 204);
+    }
+
+    .breadcrumb>.active {
+      color: rgb(119, 119, 119);
+    }
+
+    .badge {
+      display: inline-block;
+      min-width: 10px;
+      padding: 3px 7px;
+      font-size: 11px;
+      font-weight: bold;
+      color: rgb(255, 255, 255);
+      line-height: 1;
+      vertical-align: middle;
+      white-space: nowrap;
+      text-align: center;
+      background-color: rgb(119, 119, 119);
+      border-radius: 10px;
+    }
+
+    .btn .badge {
+      position: relative;
+      top: -1px;
+    }
+
+    .close {
+      float: right;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1;
+      color: rgb(0, 0, 0);
+      text-shadow: 0px 1px 0px rgb(255, 255, 255);
+      opacity: 0.2;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      cursor: pointer;
+      opacity: 0.5;
+    }
+
+    .clearfix::before,
+    .clearfix::after {
+      content: ' ';
+      display: table;
+    }
+
+    .clearfix::after {
+      clear: both;
+    }
+
+    .pull-right {
+      float: right !important;
+    }
+
+    .pull-right {
+      float: right;
+    }
+
+    h3 {
+      margin-top: 4px;
+    }
+
+    article {
+      font-size: 14px;
+      hyphens: none;
+    }
+
+    article p {
+      text-align: justify;
+    }
+
+    p.timestamps {
+      font-size: 12px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding-left: 0px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #main-container {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+
+      #main-container>.row {
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+    }
+
+    .box {
+      margin: 5px 0px;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .box-blue-light {
+      background-color: rgb(223, 235, 236);
+      color: rgb(68, 68, 68);
+    }
+
+    .box-gray {
+      color: rgb(68, 68, 68);
+      background-color: rgb(231, 231, 231);
+    }
+
+    #main-container {
+      z-index: 500;
+    }
+
+    h3 {
+      hyphens: none;
+    }
+
+    .voting-panel>a,
+    .voting-panel>a .badge {
+      margin-left: 0.5em;
+    }
+
+    .close {
+      position: absolute;
+      top: 1px;
+      right: 5px;
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+    #main-container img {
+      display: table;
+      width: auto;
+      margin: 0px auto;
+      max-width: 100%;
+    }
+
+    @media (max-width: 479px) {
+      article p {
+        text-align: left !important;
+      }
+    }
+
+    .ord_button:hover {
+      background-color: rgb(119, 33, 51);
+      box-shadow: 2px 3px 3px rgb(153, 153, 153);
+      text-decoration: none !important;
+      transform: scale(1.1);
+    }
+
+    .fields-box {
+      margin: auto;
+      max-width: 320px;
+      width: 100%;
+    }
+
+    #lead-form input {
+      box-sizing: border-box !important;
+      width: 100% !important;
+      margin: 0px !important;
+      border-radius: 5px !important;
+      font-size: 17px !important;
+      background: rgb(255, 255, 255) none repeat scroll 0% 0% !important;
+      padding: 15px !important;
+      border: 2px solid rgb(233, 215, 220);
+      font-weight: normal !important;
+    }
+
+    .name-field,
+    .phone-field {
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    .name-field label,
+    .phone-field label {
+      font-size: 12px !important;
+      font-weight: bold !important;
+      text-transform: uppercase !important;
+      color: rgb(51, 51, 51) !important;
+    }
+
+    .lead-form-box h2 {
+      margin: 20px 0px 0px !important;
+      padding: 0px !important;
+      line-height: 32px !important;
+      color: rgb(0, 0, 0) !important;
+      border: medium none;
+    }
+
+    .lead-form-box label {
+      width: 100%;
+      display: block;
+      padding: 5px 0px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .lead-form-box span {
+      font-size: 12px;
+    }
+
+    #send-lead {
+      width: 100%;
+      padding: 15px;
+      background: rgb(2, 153, 255) none repeat scroll 0% 0%;
+      text-shadow: 1px 3px 3px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 4px 25px 0px rgba(129, 150, 160, 0.45);
+      border-radius: 5px;
+      color: rgb(255, 255, 255);
+      border: medium none;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: bold !important;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 600px) {
+      .lead-form-box {
+        border-left: 1px solid rgb(218, 206, 198);
+        border-right: 1px solid rgb(218, 206, 198);
+        background-position: center center;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .fields-box {
+        padding: 10px;
+      }
+
+      .lead-form-box {
+        padding: 10px;
+      }
+
+      #send-lead {
+        padding: 10px;
+      }
+    }
+
+    #header {
+      border-bottom: 1px solid #ccc;
+      background-color: #fff;
+      color: #fff;
+      width: 100%;
+      margin: 0 auto;
+      height: 41px;
+      font-size: 14px;
+    }
+
+    #header a:hover {
+      color: #000;
+    }
+
+    .logobbc {
+      padding-top: 8px;
+      padding-right: 10px;
+      display: block;
+      float: left;
+    }
+
+    .headerInside a {
+      color: #333;
+      font-weight: bold;
+    }
+
+    .signin {
+      border-left: 1px solid #ccc;
+      display: block;
+      float: left;
+      padding: 0 8px 0 42px;
+      line-height: 40px;
+      height: 40px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      min-width: 170px;
+    }
+
+    .signin:hover {
+      border-bottom: 4px solid #18b;
+    }
+
+    .topmenu {
+      padding: 0;
+      margin: 0;
+      float: left;
+      list-style: none;
+    }
+
+    .topmenu li {
+      border-left: 1px solid #ccc;
+      margin: 0;
+      float: left;
+    }
+
+    .topmenu li a {
+      margin: 0;
+      padding: 0 16px;
+      display: block;
+      line-height: 40px;
+      height: 40px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      font-size: 0.9em;
+    }
+
+    .more {
+      position: relative;
+      padding-right: 30px !important;
+    }
+
+    .more:hover,
+    .earth:hover,
+    .travel:hover {
+      border-bottom: 4px solid #262626;
+    }
+
+    .sport:hover {
+      border-bottom: 4px solid #fe1;
+    }
+
+    .weather:hover {
+      border-bottom: 4px solid #8ce;
+    }
+
+    .shop:hover {
+      border-bottom: 4px solid #2897e5;
+    }
+
+    .orb-icon-arrow-black {
+      right: 16px;
+      top: 20px;
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 3px 3px 0 3px;
+      border-color: #2f2f2f transparent transparent transparent;
+    }
+
+    .orb-icon-arrow-white {
+      right: 10px;
+      top: 50%;
+      margin-top: -2px;
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 4px 4px 0 4px;
+      border-color: #fff transparent transparent transparent;
+    }
+
+    .subHeader {
+      background: #bb1919;
+      padding: 13px 0 12px;
+    }
+
+    .newsLogo {
+      display: inline-block;
+    }
+
+    .newsLogo img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .navigation {
+      font-size: 14px;
+      background: #a91717;
+      border-top: 1px solid #a91717;
+      line-height: 35px;
+    }
+
+    .navigation a:hover {
+      color: #fff !important;
+    }
+
+    .inner-nav {
+      max-width: 1008px;
+      margin: 0 auto;
+    }
+
+    .navigation ul {
+      display: inline-block;
+      position: relative;
+      padding-right: 71px;
+      vertical-align: top;
+      height: 35px;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    .navigation ul li {
+      float: left;
+    }
+
+    .navigation ul li.more-last {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .navigation ul li a {
+      font-size: 0.95em;
+      padding: 0 0 0 11px;
+      display: block;
+      color: #fff;
+      line-height: 35px;
+      height: 35px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      border-bottom: 4px solid #a91717;
+    }
+
+    .search-img {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+    }
+
+    .navigation ul li a:hover,
+    .navigation .active {
+      border-bottom-color: #fff;
+    }
+
+    .navigation ul li a span {
+      padding-right: 11px;
+      line-height: 17px;
+      border-right: 1px solid #bb4545;
+    }
+
+    .navigation ul li.more-last a {
+      border: 0;
+      position: relative;
+      padding-right: 28px;
+    }
+
+    .navigation ul li.more-last a:hover {
+      background: #000;
+    }
+
+    .inner-nav a {
+      color: #222;
+      line-height: 35px;
+      border-bottom: 4px solid #bb1919;
+      display: inline-block;
+      padding: 0 11px;
+      font-weight: 400;
+      font-size: 1.45em;
+    }
+
+    .inner-nav a:hover {
+      color: #000;
+    }
+
+    ul {
+      list-style-image: none;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .rt {
+      text-align: right;
+    }
+
+    .cntr {
+      text-align: center;
+    }
+
+    .blue {
+      color: blue;
+    }
+
+    .lead-form-box {
+      box-sizing: border-box !important;
+      background: white url('../images/formbg.jpg') no-repeat scroll right 0px top 0px / 100% 100%;
+      border-bottom: 1px solid rgb(218, 206, 198);
+      padding: 20px;
+      max-width: 600px;
+      font-family: Arial;
+      box-shadow: 0px 4px 15px 0px rgba(129, 150, 160, 0.15);
+    }
+
+    .fields-box {
+      margin: auto;
+      max-width: 320px;
+      width: 100%;
+    }
+
+    #lead-form input {
+      box-sizing: border-box !important;
+      width: 100% !important;
+      margin: 0px !important;
+      border-radius: 5px !important;
+      font-size: 17px !important;
+      background: rgb(255, 255, 255) none repeat scroll 0% 0% !important;
+      padding: 15px !important;
+      border: 2px solid rgb(233, 215, 220);
+      font-weight: normal !important;
+    }
+
+    .name-field,
+    .phone-field {
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    .name-field label,
+    .phone-field label {
+      font-size: 12px !important;
+      font-weight: bold !important;
+      text-transform: uppercase !important;
+      color: rgb(51, 51, 51) !important;
+    }
+
+    .lead-form-box h2 {
+      margin: 20px 0px 0px !important;
+      padding: 0px !important;
+      line-height: 32px !important;
+      color: rgb(0, 0, 0) !important;
+      border: medium none;
+    }
+
+    .lead-form-box label {
+      width: 100%;
+      display: block;
+      padding: 5px 0px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .lead-form-box span {
+      font-size: 12px;
+    }
+
+    #send-lead {
+      width: 100%;
+      padding: 15px;
+      background: rgb(2, 153, 255) none repeat scroll 0% 0%;
+      text-shadow: 1px 3px 3px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 4px 25px 0px rgba(129, 150, 160, 0.45);
+      border-radius: 5px;
+      color: rgb(255, 255, 255);
+      border: medium none;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: bold !important;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 600px) {
+      .lead-form-box {
+        border-left: 1px solid rgb(218, 206, 198);
+        border-right: 1px solid rgb(218, 206, 198);
+        background-image: url('../images/formbg.jpg');
+        background-position: center center;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .fields-box {
+        padding: 10px;
+      }
+
+      .lead-form-box {
+        padding: 10px;
+      }
+
+      #send-lead {
+        padding: 10px;
+      }
+    }
+
+    .vk-container {
+      font-family: tahoma, arial, verdana, sans-serif;
+      font-size: 15px;
+      color: black;
+      text-decoration: none;
+    }
+
+    .vk-comment-load {
+      margin-bottom: 15px;
+      position: relative;
+      border-bottom: 1px solid rgb(218, 225, 232);
+      padding-bottom: 15px;
+    }
+
+    .vk-avatar img {
+      float: left;
+      margin-right: 10px;
+    }
+
+    .vk-comment-name {
+      color: rgb(43, 88, 122);
+      font-weight: bold;
+      font-size: 12px;
+      margin-left: 59px;
+    }
+
+    .vk-comment-text {
+      margin-left: 60px;
+    }
+
+    .vk-comment-date {
+      margin-left: 60px;
+      color: rgb(153, 153, 153);
+    }
+
+    a:active,
+    a:focus {
+      outline: medium none;
+    }
+
+    input {
+      outline: medium none;
+    }
+
+    input:active {
+      outline: medium none;
+    }
+
+    :focus {
+      outline: medium none;
+    }
+
+    button:active,
+    button:focus {
+      outline: medium none !important;
+    }
+
+    button::-moz-focus-inner {
+      border: 0px none !important;
+    }
+
+    @media screen and (max-width: 481px) {
+
+      .timestamps,
+      .myh3 {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .breadcrumb {
+        margin-left: 4px !important;
+        margin-right: 4px !important;
+      }
+    }
+
+    .ord_button {
+      background-color: rgb(252, 10, 16);
+      color: rgb(255, 255, 255) !important;
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 25px !important;
+      box-shadow: 2px 3px 8px rgb(153, 153, 153);
+      text-decoration: none !important;
+      border-radius: 8px;
+      border: 3px solid rgb(255, 255, 255);
+      margin: 20px 0px 30px;
+      line-height: 27px;
+      text-transform: uppercase;
+      transition: all 0.3s ease-in 0s;
+    }
+
+    .ord_button:hover {
+      background-color: rgb(119, 33, 51);
+      box-shadow: 2px 3px 3px rgb(153, 153, 153);
+      text-decoration: none !important;
+      transform: scale(1.1);
+    }
+
+    .close {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      font-size: 20px;
+      cursor: pointer;
+      color: black;
+    }
+
+    .popupBox {
+      height: 2673px;
+      font-family: 'PT Sans', sans-serif;
+      position: fixed;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7) none repeat scroll 0% 0%;
+      top: 0px;
+      left: 0px;
+      z-index: 99999;
+      display: none;
+      max-width: 100%;
+    }
+
+    .windowPopupBox {
+      position: absolute;
+      width: 700px;
+      height: auto;
+      top: 20px;
+      left: 50%;
+      margin-left: -350px;
+      background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+      box-shadow: 0px 0px 120px rgb(0, 0, 0);
+      padding: 15px 15px 35px;
+      max-width: 100%;
+    }
+
+    .close {
+      position: relative;
+      top: -5px;
+      right: 2px;
+      font-size: 35px;
+      cursor: pointer;
+      color: rgb(112, 112, 112);
+      transition: all 0.2s ease 0s;
+    }
+
+    .close:hover {
+      color: rgb(0, 0, 0);
+      transition: all 0.2s ease 0s;
+    }
+
+    .buttonPopupBox {
+      margin: 0px;
+      transition: all 0.2s ease 0s;
+      background: rgb(131, 207, 107) none repeat scroll 0% 0%;
+      padding: 15px 30px 30px;
+      color: rgb(255, 255, 255);
+      font-weight: 700;
+      font-size: 20px;
+      text-shadow: 1px 1px 2px black, 0px 0px 0.7em rgb(0, 0, 0);
+      text-transform: uppercase;
+      text-decoration: none;
+      max-width: 100%;
+    }
+
+    .buttonPopupBox:hover {
+      transition: all 0.2s ease 0s;
+      background: rgb(72, 179, 235) none repeat scroll 0% 0%;
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+    }
+
+    .headerPopupBox {
+      margin: 0px;
+      color: rgb(53, 53, 53);
+      font-size: 20px;
+    }
+
+    .imgPopupBox {
+      margin: 0px 0px 30px;
+      height: 250px;
+      width: auto;
+    }
+
+    .inL_37027 {
+      border: 1px solid rgb(204, 0, 0);
+    }
+
+    .inL_773887 {
+      border: 1px solid rgb(204, 0, 0);
+    }
+
+    .inL_156969 {
+      max-width: 700px;
+      width: 70%;
+    }
+
+    .inL_766517 {
+      text-decoration: underline;
+      font-size: 18px;
+      line-height: 26px;
+    }
+
+    .inL_793614 {
+      max-width: 100px;
+      margin-top: 20px;
+    }
+
+    .inL_214043 {
+      color: blue;
+      font-size: 14px;
+    }
+
+    .inL_372542 {
+      font-size: 16px;
+    }
+
+    .inL_723689 {
+      margin: 20px 10px;
+      border: 2px solid rgb(2, 153, 255);
+      padding: 10px;
+    }
+
+    .inL_351081 {
+      margin-bottom: 20px;
+    }
+
+    .inL_990605 {
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .inL_949104 {
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .inL_714818 {
+      text-align: center;
+    }
+
+    .inL_732889 {
+      color: rgba(203, 203, 203, 0.65);
+    }
+
+    .inL_719990 {
+      height: 8480px;
+      display: none;
+    }
+
+    .inL_195976 {
+      margin: 0px;
+      font-size: 14px;
+      color: rgb(53, 53, 53);
+    }
+
+    @media (max-width: 650px) {
+      .topmenu {
+        display: none;
+      }
+
+      #lead-form input {
+        font-size: 14px !important;
+      }
+    }
+
+    .text_section {
+      background: #eaeaea !important;
+    }
+
+    .ava_block {
+      margin-right: 20px;
+      width: 50px;
+    }
+
+    .ava_block img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    @media screen and (max-width: 860px) {
+      .base {
+        margin-top: 15px;
+      }
+
+      .ava_block img {
+        height: 40px;
+      }
+    }
+
+    @media screen and (max-width: 460px) {
+      .base .headline {
+        text-align: center;
+      }
+    }
+  </style>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+
+  <style>
+    .swal2-popup.swal2-toast {
+      box-sizing: border-box;
+      grid-column: 1/4 !important;
+      grid-row: 1/4 !important;
+      grid-template-columns: min-content auto min-content;
+      padding: 1em;
+      overflow-y: hidden;
+      background: #fff;
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.075),
+        0 1px 2px rgba(0, 0, 0, 0.075), 1px 2px 4px rgba(0, 0, 0, 0.075),
+        1px 3px 8px rgba(0, 0, 0, 0.075), 2px 4px 16px rgba(0, 0, 0, 0.075);
+      pointer-events: all;
+    }
+
+    .swal2-popup.swal2-toast>* {
+      grid-column: 2;
+    }
+
+    .swal2-popup.swal2-toast .swal2-title {
+      margin: 0.5em 1em;
+      padding: 0;
+      font-size: 1em;
+      text-align: initial;
+    }
+
+    .swal2-popup.swal2-toast .swal2-loading {
+      justify-content: center;
+    }
+
+    .swal2-popup.swal2-toast .swal2-input {
+      height: 2em;
+      margin: 0.5em;
+      font-size: 1em;
+    }
+
+    .swal2-popup.swal2-toast .swal2-validation-message {
+      font-size: 1em;
+    }
+
+    .swal2-popup.swal2-toast .swal2-footer {
+      margin: 0.5em 0 0;
+      padding: 0.5em 0 0;
+      font-size: 0.8em;
+    }
+
+    .swal2-popup.swal2-toast .swal2-close {
+      grid-column: 3/3;
+      grid-row: 1/99;
+      align-self: center;
+      width: 0.8em;
+      height: 0.8em;
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .swal2-popup.swal2-toast .swal2-html-container {
+      margin: 0.5em 1em;
+      padding: 0;
+      overflow: initial;
+      font-size: 1em;
+      text-align: initial;
+    }
+
+    .swal2-popup.swal2-toast .swal2-html-container:empty {
+      padding: 0;
+    }
+
+    .swal2-popup.swal2-toast .swal2-loader {
+      grid-column: 1;
+      grid-row: 1/99;
+      align-self: center;
+      width: 2em;
+      height: 2em;
+      margin: 0.25em;
+    }
+
+    .swal2-popup.swal2-toast .swal2-icon {
+      grid-column: 1;
+      grid-row: 1/99;
+      align-self: center;
+      width: 2em;
+      min-width: 2em;
+      height: 2em;
+      margin: 0 0.5em 0 0;
+    }
+
+    .swal2-popup.swal2-toast .swal2-icon .swal2-icon-content {
+      display: flex;
+      align-items: center;
+      font-size: 1.8em;
+      font-weight: bold;
+    }
+
+    .swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring {
+      width: 2em;
+      height: 2em;
+    }
+
+    .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^='swal2-x-mark-line'] {
+      top: 0.875em;
+      width: 1.375em;
+    }
+
+    .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='left'] {
+      left: 0.3125em;
+    }
+
+    .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='right'] {
+      right: 0.3125em;
+    }
+
+    .swal2-popup.swal2-toast .swal2-actions {
+      justify-content: flex-start;
+      height: auto;
+      margin: 0;
+      margin-top: 0.5em;
+      padding: 0 0.5em;
+    }
+
+    .swal2-popup.swal2-toast .swal2-styled {
+      margin: 0.25em 0.5em;
+      padding: 0.4em 0.6em;
+      font-size: 1em;
+    }
+
+    .swal2-popup.swal2-toast .swal2-success {
+      border-color: #a5dc86;
+    }
+
+    .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'] {
+      position: absolute;
+      width: 1.6em;
+      height: 3em;
+      transform: rotate(45deg);
+      border-radius: 50%;
+    }
+
+    .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'][class$='left'] {
+      top: -0.8em;
+      left: -0.5em;
+      transform: rotate(-45deg);
+      transform-origin: 2em 2em;
+      border-radius: 4em 0 0 4em;
+    }
+
+    .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'][class$='right'] {
+      top: -0.25em;
+      left: 0.9375em;
+      transform-origin: 0 1.5em;
+      border-radius: 0 4em 4em 0;
+    }
+
+    .swal2-popup.swal2-toast .swal2-success .swal2-success-ring {
+      width: 2em;
+      height: 2em;
+    }
+
+    .swal2-popup.swal2-toast .swal2-success .swal2-success-fix {
+      top: 0;
+      left: 0.4375em;
+      width: 0.4375em;
+      height: 2.6875em;
+    }
+
+    .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-line'] {
+      height: 0.3125em;
+    }
+
+    .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-line'][class$='tip'] {
+      top: 1.125em;
+      left: 0.1875em;
+      width: 0.75em;
+    }
+
+    .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-line'][class$='long'] {
+      top: 0.9375em;
+      right: 0.1875em;
+      width: 1.375em;
+    }
+
+    .swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip {
+      animation: swal2-toast-animate-success-line-tip 0.75s;
+    }
+
+    .swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long {
+      animation: swal2-toast-animate-success-line-long 0.75s;
+    }
+
+    .swal2-popup.swal2-toast.swal2-show {
+      animation: swal2-toast-show 0.5s;
+    }
+
+    .swal2-popup.swal2-toast.swal2-hide {
+      animation: swal2-toast-hide 0.1s forwards;
+    }
+
+    div:where(.swal2-container) {
+      display: grid;
+      position: fixed;
+      z-index: 1060;
+      inset: 0;
+      box-sizing: border-box;
+      grid-template-areas: 'top-start     top            top-end' 'center-start  center         center-end' 'bottom-start  bottom-center  bottom-end';
+      grid-template-rows:
+        minmax(min-content, auto) minmax(min-content, auto) minmax(min-content, auto);
+      height: 100%;
+      padding: 0.625em;
+      overflow-x: hidden;
+      transition: background-color 0.1s;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    div:where(.swal2-container).swal2-backdrop-show,
+    div:where(.swal2-container).swal2-noanimation {
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    div:where(.swal2-container).swal2-backdrop-hide {
+      background: rgba(0, 0, 0, 0) !important;
+    }
+
+    div:where(.swal2-container).swal2-top-start,
+    div:where(.swal2-container).swal2-center-start,
+    div:where(.swal2-container).swal2-bottom-start {
+      grid-template-columns: minmax(0, 1fr) auto auto;
+    }
+
+    div:where(.swal2-container).swal2-top,
+    div:where(.swal2-container).swal2-center,
+    div:where(.swal2-container).swal2-bottom {
+      grid-template-columns: auto minmax(0, 1fr) auto;
+    }
+
+    div:where(.swal2-container).swal2-top-end,
+    div:where(.swal2-container).swal2-center-end,
+    div:where(.swal2-container).swal2-bottom-end {
+      grid-template-columns: auto auto minmax(0, 1fr);
+    }
+
+    div:where(.swal2-container).swal2-top-start>.swal2-popup {
+      align-self: start;
+    }
+
+    div:where(.swal2-container).swal2-top>.swal2-popup {
+      grid-column: 2;
+      align-self: start;
+      justify-self: center;
+    }
+
+    div:where(.swal2-container).swal2-top-end>.swal2-popup,
+    div:where(.swal2-container).swal2-top-right>.swal2-popup {
+      grid-column: 3;
+      align-self: start;
+      justify-self: end;
+    }
+
+    div:where(.swal2-container).swal2-center-start>.swal2-popup,
+    div:where(.swal2-container).swal2-center-left>.swal2-popup {
+      grid-row: 2;
+      align-self: center;
+    }
+
+    div:where(.swal2-container).swal2-center>.swal2-popup {
+      grid-column: 2;
+      grid-row: 2;
+      align-self: center;
+      justify-self: center;
+    }
+
+    div:where(.swal2-container).swal2-center-end>.swal2-popup,
+    div:where(.swal2-container).swal2-center-right>.swal2-popup {
+      grid-column: 3;
+      grid-row: 2;
+      align-self: center;
+      justify-self: end;
+    }
+
+    div:where(.swal2-container).swal2-bottom-start>.swal2-popup,
+    div:where(.swal2-container).swal2-bottom-left>.swal2-popup {
+      grid-column: 1;
+      grid-row: 3;
+      align-self: end;
+    }
+
+    div:where(.swal2-container).swal2-bottom>.swal2-popup {
+      grid-column: 2;
+      grid-row: 3;
+      justify-self: center;
+      align-self: end;
+    }
+
+    div:where(.swal2-container).swal2-bottom-end>.swal2-popup,
+    div:where(.swal2-container).swal2-bottom-right>.swal2-popup {
+      grid-column: 3;
+      grid-row: 3;
+      align-self: end;
+      justify-self: end;
+    }
+
+    div:where(.swal2-container).swal2-grow-row>.swal2-popup,
+    div:where(.swal2-container).swal2-grow-fullscreen>.swal2-popup {
+      grid-column: 1/4;
+      width: 100%;
+    }
+
+    div:where(.swal2-container).swal2-grow-column>.swal2-popup,
+    div:where(.swal2-container).swal2-grow-fullscreen>.swal2-popup {
+      grid-row: 1/4;
+      align-self: stretch;
+    }
+
+    div:where(.swal2-container).swal2-no-transition {
+      transition: none !important;
+    }
+
+    div:where(.swal2-container) div:where(.swal2-popup) {
+      display: none;
+      position: relative;
+      box-sizing: border-box;
+      grid-template-columns: minmax(0, 100%);
+      width: 32em;
+      max-width: 100%;
+      padding: 0 0 1.25em;
+      border: none;
+      border-radius: 5px;
+      background: #fff;
+      color: #545454;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    div:where(.swal2-container) div:where(.swal2-popup):focus {
+      outline: none;
+    }
+
+    div:where(.swal2-container) div:where(.swal2-popup).swal2-loading {
+      overflow-y: hidden;
+    }
+
+    div:where(.swal2-container) h2:where(.swal2-title) {
+      position: relative;
+      max-width: 100%;
+      margin: 0;
+      padding: 0.8em 1em 0;
+      color: inherit;
+      font-size: 1.875em;
+      font-weight: 600;
+      text-align: center;
+      text-transform: none;
+      word-wrap: break-word;
+    }
+
+    div:where(.swal2-container) div:where(.swal2-actions) {
+      display: flex;
+      z-index: 1;
+      box-sizing: border-box;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      margin: 1.25em auto 0;
+      padding: 0;
+    }
+
+    div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled[disabled] {
+      opacity: 0.4;
+    }
+
+    div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:hover {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.1),
+          rgba(0, 0, 0, 0.1));
+    }
+
+    div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:active {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 0.2));
+    }
+
+    div:where(.swal2-container) div:where(.swal2-loader) {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 2.2em;
+      height: 2.2em;
+      margin: 0 1.875em;
+      animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+      border-width: 0.25em;
+      border-style: solid;
+      border-radius: 100%;
+      border-color: #2778c4 rgba(0, 0, 0, 0) #2778c4 rgba(0, 0, 0, 0);
+    }
+
+    div:where(.swal2-container) button:where(.swal2-styled) {
+      margin: 0.3125em;
+      padding: 0.625em 1.1em;
+      transition: box-shadow 0.1s;
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0);
+      font-weight: 500;
+    }
+
+    div:where(.swal2-container) button:where(.swal2-styled):not([disabled]) {
+      cursor: pointer;
+    }
+
+    div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+      border: 0;
+      border-radius: 0.25em;
+      background: initial;
+      background-color: #7066e0;
+      color: #fff;
+      font-size: 1em;
+    }
+
+    div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm:focus {
+      box-shadow: 0 0 0 3px rgba(112, 102, 224, 0.5);
+    }
+
+    div:where(.swal2-container) button:where(.swal2-styled).swal2-deny {
+      border: 0;
+      border-radius: 0.25em;
+      background: initial;
+      background-color: #dc3741;
+      color: #fff;
+      font-size: 1em;
+    }
+
+    div:where(.swal2-container) button:where(.swal2-styled).swal2-deny:focus {
+      box-shadow: 0 0 0 3px rgba(220, 55, 65, 0.5);
+    }
+
+    div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel {
+      border: 0;
+      border-radius: 0.25em;
+      background: initial;
+      background-color: #6e7881;
+      color: #fff;
+      font-size: 1em;
+    }
+
+    div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel:focus {
+      box-shadow: 0 0 0 3px rgba(110, 120, 129, 0.5);
+    }
+
+    div:where(.swal2-container) button:where(.swal2-styled).swal2-default-outline:focus {
+      box-shadow: 0 0 0 3px rgba(100, 150, 200, 0.5);
+    }
+
+    div:where(.swal2-container) button:where(.swal2-styled):focus {
+      outline: none;
+    }
+
+    div:where(.swal2-container) button:where(.swal2-styled)::-moz-focus-inner {
+      border: 0;
+    }
+
+    div:where(.swal2-container) div:where(.swal2-footer) {
+      justify-content: center;
+      margin: 1em 0 0;
+      padding: 1em 1em 0;
+      border-top: 1px solid #eee;
+      color: inherit;
+      font-size: 1em;
+    }
+
+    div:where(.swal2-container) .swal2-timer-progress-bar-container {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      grid-column: auto !important;
+      overflow: hidden;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    div:where(.swal2-container) div:where(.swal2-timer-progress-bar) {
+      width: 100%;
+      height: 0.25em;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    div:where(.swal2-container) img:where(.swal2-image) {
+      max-width: 100%;
+      margin: 2em auto 1em;
+    }
+
+    div:where(.swal2-container) button:where(.swal2-close) {
+      z-index: 2;
+      align-items: center;
+      justify-content: center;
+      width: 1.2em;
+      height: 1.2em;
+      margin-top: 0;
+      margin-right: 0;
+      margin-bottom: -1.2em;
+      padding: 0;
+      overflow: hidden;
+      transition: color 0.1s, box-shadow 0.1s;
+      border: none;
+      border-radius: 5px;
+      background: rgba(0, 0, 0, 0);
+      color: #ccc;
+      font-family: monospace;
+      font-size: 2.5em;
+      cursor: pointer;
+      justify-self: end;
+    }
+
+    div:where(.swal2-container) button:where(.swal2-close):hover {
+      transform: none;
+      background: rgba(0, 0, 0, 0);
+      color: #f27474;
+    }
+
+    div:where(.swal2-container) button:where(.swal2-close):focus {
+      outline: none;
+      box-shadow: inset 0 0 0 3px rgba(100, 150, 200, 0.5);
+    }
+
+    div:where(.swal2-container) button:where(.swal2-close)::-moz-focus-inner {
+      border: 0;
+    }
+
+    div:where(.swal2-container) .swal2-html-container {
+      z-index: 1;
+      justify-content: center;
+      margin: 1em 1.6em 0.3em;
+      padding: 0;
+      overflow: auto;
+      color: inherit;
+      font-size: 1.125em;
+      font-weight: normal;
+      line-height: normal;
+      text-align: center;
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+
+    div:where(.swal2-container) input:where(.swal2-input),
+    div:where(.swal2-container) input:where(.swal2-file),
+    div:where(.swal2-container) textarea:where(.swal2-textarea),
+    div:where(.swal2-container) select:where(.swal2-select),
+    div:where(.swal2-container) div:where(.swal2-radio),
+    div:where(.swal2-container) label:where(.swal2-checkbox) {
+      margin: 1em 2em 3px;
+    }
+
+    div:where(.swal2-container) input:where(.swal2-input),
+    div:where(.swal2-container) input:where(.swal2-file),
+    div:where(.swal2-container) textarea:where(.swal2-textarea) {
+      box-sizing: border-box;
+      width: auto;
+      transition: border-color 0.1s, box-shadow 0.1s;
+      border: 1px solid #d9d9d9;
+      border-radius: 0.1875em;
+      background: rgba(0, 0, 0, 0);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06),
+        0 0 0 3px rgba(0, 0, 0, 0);
+      color: inherit;
+      font-size: 1.125em;
+    }
+
+    div:where(.swal2-container) input:where(.swal2-input).swal2-inputerror,
+    div:where(.swal2-container) input:where(.swal2-file).swal2-inputerror,
+    div:where(.swal2-container) textarea:where(.swal2-textarea).swal2-inputerror {
+      border-color: #f27474 !important;
+      box-shadow: 0 0 2px #f27474 !important;
+    }
+
+    div:where(.swal2-container) input:where(.swal2-input):focus,
+    div:where(.swal2-container) input:where(.swal2-file):focus,
+    div:where(.swal2-container) textarea:where(.swal2-textarea):focus {
+      border: 1px solid #b4dbed;
+      outline: none;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06),
+        0 0 0 3px rgba(100, 150, 200, 0.5);
+    }
+
+    div:where(.swal2-container) input:where(.swal2-input)::placeholder,
+    div:where(.swal2-container) input:where(.swal2-file)::placeholder,
+    div:where(.swal2-container) textarea:where(.swal2-textarea)::placeholder {
+      color: #ccc;
+    }
+
+    div:where(.swal2-container) .swal2-range {
+      margin: 1em 2em 3px;
+      background: #fff;
+    }
+
+    div:where(.swal2-container) .swal2-range input {
+      width: 80%;
+    }
+
+    div:where(.swal2-container) .swal2-range output {
+      width: 20%;
+      color: inherit;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    div:where(.swal2-container) .swal2-range input,
+    div:where(.swal2-container) .swal2-range output {
+      height: 2.625em;
+      padding: 0;
+      font-size: 1.125em;
+      line-height: 2.625em;
+    }
+
+    div:where(.swal2-container) .swal2-input {
+      height: 2.625em;
+      padding: 0 0.75em;
+    }
+
+    div:where(.swal2-container) .swal2-file {
+      width: 75%;
+      margin-right: auto;
+      margin-left: auto;
+      background: rgba(0, 0, 0, 0);
+      font-size: 1.125em;
+    }
+
+    div:where(.swal2-container) .swal2-textarea {
+      height: 6.75em;
+      padding: 0.75em;
+    }
+
+    div:where(.swal2-container) .swal2-select {
+      min-width: 50%;
+      max-width: 100%;
+      padding: 0.375em 0.625em;
+      background: rgba(0, 0, 0, 0);
+      color: inherit;
+      font-size: 1.125em;
+    }
+
+    div:where(.swal2-container) .swal2-radio,
+    div:where(.swal2-container) .swal2-checkbox {
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      color: inherit;
+    }
+
+    div:where(.swal2-container) .swal2-radio label,
+    div:where(.swal2-container) .swal2-checkbox label {
+      margin: 0 0.6em;
+      font-size: 1.125em;
+    }
+
+    div:where(.swal2-container) .swal2-radio input,
+    div:where(.swal2-container) .swal2-checkbox input {
+      flex-shrink: 0;
+      margin: 0 0.4em;
+    }
+
+    div:where(.swal2-container) label:where(.swal2-input-label) {
+      display: flex;
+      justify-content: center;
+      margin: 1em auto 0;
+    }
+
+    div:where(.swal2-container) div:where(.swal2-validation-message) {
+      align-items: center;
+      justify-content: center;
+      margin: 1em 0 0;
+      padding: 0.625em;
+      overflow: hidden;
+      background: #f0f0f0;
+      color: #666;
+      font-size: 1em;
+      font-weight: 300;
+    }
+
+    div:where(.swal2-container) div:where(.swal2-validation-message)::before {
+      content: '!';
+      display: inline-block;
+      width: 1.5em;
+      min-width: 1.5em;
+      height: 1.5em;
+      margin: 0 0.625em;
+      border-radius: 50%;
+      background-color: #f27474;
+      color: #fff;
+      font-weight: 600;
+      line-height: 1.5em;
+      text-align: center;
+    }
+
+    div:where(.swal2-container) .swal2-progress-steps {
+      flex-wrap: wrap;
+      align-items: center;
+      max-width: 100%;
+      margin: 1.25em auto;
+      padding: 0;
+      background: rgba(0, 0, 0, 0);
+      font-weight: 600;
+    }
+
+    div:where(.swal2-container) .swal2-progress-steps li {
+      display: inline-block;
+      position: relative;
+    }
+
+    div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step {
+      z-index: 20;
+      flex-shrink: 0;
+      width: 2em;
+      height: 2em;
+      border-radius: 2em;
+      background: #2778c4;
+      color: #fff;
+      line-height: 2em;
+      text-align: center;
+    }
+
+    div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step {
+      background: #2778c4;
+    }
+
+    div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step {
+      background: #add8e6;
+      color: #fff;
+    }
+
+    div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line {
+      background: #add8e6;
+    }
+
+    div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step-line {
+      z-index: 10;
+      flex-shrink: 0;
+      width: 2.5em;
+      height: 0.4em;
+      margin: 0 -1px;
+      background: #2778c4;
+    }
+
+    div:where(.swal2-icon) {
+      position: relative;
+      box-sizing: content-box;
+      justify-content: center;
+      width: 5em;
+      height: 5em;
+      margin: 2.5em auto 0.6em;
+      border: 0.25em solid rgba(0, 0, 0, 0);
+      border-radius: 50%;
+      border-color: #000;
+      font-family: inherit;
+      line-height: 5em;
+      cursor: default;
+      user-select: none;
+    }
+
+    div:where(.swal2-icon) .swal2-icon-content {
+      display: flex;
+      align-items: center;
+      font-size: 3.75em;
+    }
+
+    div:where(.swal2-icon).swal2-error {
+      border-color: #f27474;
+      color: #f27474;
+    }
+
+    div:where(.swal2-icon).swal2-error .swal2-x-mark {
+      position: relative;
+      flex-grow: 1;
+    }
+
+    div:where(.swal2-icon).swal2-error [class^='swal2-x-mark-line'] {
+      display: block;
+      position: absolute;
+      top: 2.3125em;
+      width: 2.9375em;
+      height: 0.3125em;
+      border-radius: 0.125em;
+      background-color: #f27474;
+    }
+
+    div:where(.swal2-icon).swal2-error [class^='swal2-x-mark-line'][class$='left'] {
+      left: 1.0625em;
+      transform: rotate(45deg);
+    }
+
+    div:where(.swal2-icon).swal2-error [class^='swal2-x-mark-line'][class$='right'] {
+      right: 1em;
+      transform: rotate(-45deg);
+    }
+
+    div:where(.swal2-icon).swal2-error.swal2-icon-show {
+      animation: swal2-animate-error-icon 0.5s;
+    }
+
+    div:where(.swal2-icon).swal2-error.swal2-icon-show .swal2-x-mark {
+      animation: swal2-animate-error-x-mark 0.5s;
+    }
+
+    div:where(.swal2-icon).swal2-warning {
+      border-color: #facea8;
+      color: #f8bb86;
+    }
+
+    div:where(.swal2-icon).swal2-warning.swal2-icon-show {
+      animation: swal2-animate-error-icon 0.5s;
+    }
+
+    div:where(.swal2-icon).swal2-warning.swal2-icon-show .swal2-icon-content {
+      animation: swal2-animate-i-mark 0.5s;
+    }
+
+    div:where(.swal2-icon).swal2-info {
+      border-color: #9de0f6;
+      color: #3fc3ee;
+    }
+
+    div:where(.swal2-icon).swal2-info.swal2-icon-show {
+      animation: swal2-animate-error-icon 0.5s;
+    }
+
+    div:where(.swal2-icon).swal2-info.swal2-icon-show .swal2-icon-content {
+      animation: swal2-animate-i-mark 0.8s;
+    }
+
+    div:where(.swal2-icon).swal2-question {
+      border-color: #c9dae1;
+      color: #87adbd;
+    }
+
+    div:where(.swal2-icon).swal2-question.swal2-icon-show {
+      animation: swal2-animate-error-icon 0.5s;
+    }
+
+    div:where(.swal2-icon).swal2-question.swal2-icon-show .swal2-icon-content {
+      animation: swal2-animate-question-mark 0.8s;
+    }
+
+    div:where(.swal2-icon).swal2-success {
+      border-color: #a5dc86;
+      color: #a5dc86;
+    }
+
+    div:where(.swal2-icon).swal2-success [class^='swal2-success-circular-line'] {
+      position: absolute;
+      width: 3.75em;
+      height: 7.5em;
+      transform: rotate(45deg);
+      border-radius: 50%;
+    }
+
+    div:where(.swal2-icon).swal2-success [class^='swal2-success-circular-line'][class$='left'] {
+      top: -0.4375em;
+      left: -2.0635em;
+      transform: rotate(-45deg);
+      transform-origin: 3.75em 3.75em;
+      border-radius: 7.5em 0 0 7.5em;
+    }
+
+    div:where(.swal2-icon).swal2-success [class^='swal2-success-circular-line'][class$='right'] {
+      top: -0.6875em;
+      left: 1.875em;
+      transform: rotate(-45deg);
+      transform-origin: 0 3.75em;
+      border-radius: 0 7.5em 7.5em 0;
+    }
+
+    div:where(.swal2-icon).swal2-success .swal2-success-ring {
+      position: absolute;
+      z-index: 2;
+      top: -0.25em;
+      left: -0.25em;
+      box-sizing: content-box;
+      width: 100%;
+      height: 100%;
+      border: 0.25em solid rgba(165, 220, 134, 0.3);
+      border-radius: 50%;
+    }
+
+    div:where(.swal2-icon).swal2-success .swal2-success-fix {
+      position: absolute;
+      z-index: 1;
+      top: 0.5em;
+      left: 1.625em;
+      width: 0.4375em;
+      height: 5.625em;
+      transform: rotate(-45deg);
+    }
+
+    div:where(.swal2-icon).swal2-success [class^='swal2-success-line'] {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      height: 0.3125em;
+      border-radius: 0.125em;
+      background-color: #a5dc86;
+    }
+
+    div:where(.swal2-icon).swal2-success [class^='swal2-success-line'][class$='tip'] {
+      top: 2.875em;
+      left: 0.8125em;
+      width: 1.5625em;
+      transform: rotate(45deg);
+    }
+
+    div:where(.swal2-icon).swal2-success [class^='swal2-success-line'][class$='long'] {
+      top: 2.375em;
+      right: 0.5em;
+      width: 2.9375em;
+      transform: rotate(-45deg);
+    }
+
+    div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-tip {
+      animation: swal2-animate-success-line-tip 0.75s;
+    }
+
+    div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-long {
+      animation: swal2-animate-success-line-long 0.75s;
+    }
+
+    div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-circular-line-right {
+      animation: swal2-rotate-success-circular-line 4.25s ease-in;
+    }
+
+    [class^='swal2'] {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    .swal2-show {
+      animation: swal2-show 0.3s;
+    }
+
+    .swal2-hide {
+      animation: swal2-hide 0.15s forwards;
+    }
+
+    .swal2-noanimation {
+      transition: none;
+    }
+
+    .swal2-scrollbar-measure {
+      position: absolute;
+      top: -9999px;
+      width: 50px;
+      height: 50px;
+      overflow: scroll;
+    }
+
+    .swal2-rtl .swal2-close {
+      margin-right: initial;
+      margin-left: 0;
+    }
+
+    .swal2-rtl .swal2-timer-progress-bar {
+      right: 0;
+      left: auto;
+    }
+
+    @keyframes swal2-toast-show {
+      0% {
+        transform: translateY(-0.625em) rotateZ(2deg);
+      }
+
+      33% {
+        transform: translateY(0) rotateZ(-2deg);
+      }
+
+      66% {
+        transform: translateY(0.3125em) rotateZ(2deg);
+      }
+
+      100% {
+        transform: translateY(0) rotateZ(0deg);
+      }
+    }
+
+    @keyframes swal2-toast-hide {
+      100% {
+        transform: rotateZ(1deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes swal2-toast-animate-success-line-tip {
+      0% {
+        top: 0.5625em;
+        left: 0.0625em;
+        width: 0;
+      }
+
+      54% {
+        top: 0.125em;
+        left: 0.125em;
+        width: 0;
+      }
+
+      70% {
+        top: 0.625em;
+        left: -0.25em;
+        width: 1.625em;
+      }
+
+      84% {
+        top: 1.0625em;
+        left: 0.75em;
+        width: 0.5em;
+      }
+
+      100% {
+        top: 1.125em;
+        left: 0.1875em;
+        width: 0.75em;
+      }
+    }
+
+    @keyframes swal2-toast-animate-success-line-long {
+      0% {
+        top: 1.625em;
+        right: 1.375em;
+        width: 0;
+      }
+
+      65% {
+        top: 1.25em;
+        right: 0.9375em;
+        width: 0;
+      }
+
+      84% {
+        top: 0.9375em;
+        right: 0;
+        width: 1.125em;
+      }
+
+      100% {
+        top: 0.9375em;
+        right: 0.1875em;
+        width: 1.375em;
+      }
+    }
+
+    @keyframes swal2-show {
+      0% {
+        transform: scale(0.7);
+      }
+
+      45% {
+        transform: scale(1.05);
+      }
+
+      80% {
+        transform: scale(0.95);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes swal2-hide {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    @keyframes swal2-animate-success-line-tip {
+      0% {
+        top: 1.1875em;
+        left: 0.0625em;
+        width: 0;
+      }
+
+      54% {
+        top: 1.0625em;
+        left: 0.125em;
+        width: 0;
+      }
+
+      70% {
+        top: 2.1875em;
+        left: -0.375em;
+        width: 3.125em;
+      }
+
+      84% {
+        top: 3em;
+        left: 1.3125em;
+        width: 1.0625em;
+      }
+
+      100% {
+        top: 2.8125em;
+        left: 0.8125em;
+        width: 1.5625em;
+      }
+    }
+
+    @keyframes swal2-animate-success-line-long {
+      0% {
+        top: 3.375em;
+        right: 2.875em;
+        width: 0;
+      }
+
+      65% {
+        top: 3.375em;
+        right: 2.875em;
+        width: 0;
+      }
+
+      84% {
+        top: 2.1875em;
+        right: 0;
+        width: 3.4375em;
+      }
+
+      100% {
+        top: 2.375em;
+        right: 0.5em;
+        width: 2.9375em;
+      }
+    }
+
+    @keyframes swal2-rotate-success-circular-line {
+      0% {
+        transform: rotate(-45deg);
+      }
+
+      5% {
+        transform: rotate(-45deg);
+      }
+
+      12% {
+        transform: rotate(-405deg);
+      }
+
+      100% {
+        transform: rotate(-405deg);
+      }
+    }
+
+    @keyframes swal2-animate-error-x-mark {
+      0% {
+        margin-top: 1.625em;
+        transform: scale(0.4);
+        opacity: 0;
+      }
+
+      50% {
+        margin-top: 1.625em;
+        transform: scale(0.4);
+        opacity: 0;
+      }
+
+      80% {
+        margin-top: -0.375em;
+        transform: scale(1.15);
+      }
+
+      100% {
+        margin-top: 0;
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes swal2-animate-error-icon {
+      0% {
+        transform: rotateX(100deg);
+        opacity: 0;
+      }
+
+      100% {
+        transform: rotateX(0deg);
+        opacity: 1;
+      }
+    }
+
+    @keyframes swal2-rotate-loading {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes swal2-animate-question-mark {
+      0% {
+        transform: rotateY(-360deg);
+      }
+
+      100% {
+        transform: rotateY(0);
+      }
+    }
+
+    @keyframes swal2-animate-i-mark {
+      0% {
+        transform: rotateZ(45deg);
+        opacity: 0;
+      }
+
+      25% {
+        transform: rotateZ(-25deg);
+        opacity: 0.4;
+      }
+
+      50% {
+        transform: rotateZ(15deg);
+        opacity: 0.8;
+      }
+
+      75% {
+        transform: rotateZ(-5deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: rotateX(0);
+        opacity: 1;
+      }
+    }
+
+    body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+      overflow: hidden;
+    }
+
+    body.swal2-height-auto {
+      height: auto !important;
+    }
+
+    body.swal2-no-backdrop .swal2-container {
+      background-color: rgba(0, 0, 0, 0) !important;
+      pointer-events: none;
+    }
+
+    body.swal2-no-backdrop .swal2-container .swal2-popup {
+      pointer-events: all;
+    }
+
+    body.swal2-no-backdrop .swal2-container .swal2-modal {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    }
+
+    @media print {
+      body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+        overflow-y: scroll !important;
+      }
+
+      body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden='true'] {
+        display: none;
+      }
+
+      body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container {
+        position: static !important;
+      }
+    }
+
+    body.swal2-toast-shown .swal2-container {
+      box-sizing: border-box;
+      width: 360px;
+      max-width: 100%;
+      background-color: rgba(0, 0, 0, 0);
+      pointer-events: none;
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-top {
+      inset: 0 auto auto 50%;
+      transform: translateX(-50%);
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-top-end,
+    body.swal2-toast-shown .swal2-container.swal2-top-right {
+      inset: 0 0 auto auto;
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-top-start,
+    body.swal2-toast-shown .swal2-container.swal2-top-left {
+      inset: 0 auto auto 0;
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-center-start,
+    body.swal2-toast-shown .swal2-container.swal2-center-left {
+      inset: 50% auto auto 0;
+      transform: translateY(-50%);
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-center {
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-center-end,
+    body.swal2-toast-shown .swal2-container.swal2-center-right {
+      inset: 50% 0 auto auto;
+      transform: translateY(-50%);
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-bottom-start,
+    body.swal2-toast-shown .swal2-container.swal2-bottom-left {
+      inset: auto auto 0 0;
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-bottom {
+      inset: auto auto 0 50%;
+      transform: translateX(-50%);
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-bottom-end,
+    body.swal2-toast-shown .swal2-container.swal2-bottom-right {
+      inset: auto 0 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header" data-v-78aef4cc="">
+    <div class="container" data-v-78aef4cc="">
+
+      <nav class="header__nav" data-v-5dc00ec3="" data-v-78aef4cc="">
+        <ul data-v-5dc00ec3="">
+          <li class="header__programs" data-v-5dc00ec3="">
+            <a href="#roulette" class="header__programs-item header-medium-bold" data-v-5dc00ec3="">
+              програми
+              <span data-v-5dc00ec3=""><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8"
+                  data-v-5dc00ec3="">
+                  <path
+                    d="M4.43301 7.25C4.24056 7.58333 3.75944 7.58333 3.56699 7.25L0.102885 1.25C-0.0895653 0.916667 0.150997 0.5 0.535897 0.5L7.4641 0.5C7.849 0.5 8.08956 0.916667 7.89711 1.25L4.43301 7.25Z"
+                    data-v-5dc00ec3=""></path>
+                </svg></span></a>
+            <div class="header__nav-dropdown header__nav-dropdown--programs" data-v-5dc00ec3="">
+              <ul data-v-5dc00ec3="">
+                <li data-v-5dc00ec3="">
+                  <a href="#roulette" class="bodyTextMedium-regular" data-v-5dc00ec3="">
+                    програми
+                  </a>
+                </li>
+                <li data-v-5dc00ec3="">
+                  <a href="#roulette" class="bodyTextMedium-regular" data-v-5dc00ec3="">
+                    шоу
+                  </a>
+                </li>
+                <li data-v-5dc00ec3="">
+                  <a href="#roulette" class="bodyTextMedium-regular" data-v-5dc00ec3="">
+                    серіали
+                  </a>
+                </li>
+                <li data-v-5dc00ec3="">
+                  <a href="#roulette" class="bodyTextMedium-regular" data-v-5dc00ec3="">
+                    фільми
+                  </a>
+                </li>
+                <li data-v-5dc00ec3="">
+                  <a href="#roulette" class="bodyTextMedium-regular" data-v-5dc00ec3="">
+                    ведучі
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="header__news" data-v-5dc00ec3="">
+            <a href="#roulette" class="header__programs-item header-medium-bold" data-v-5dc00ec3="">
+              Новини
+              <span data-v-5dc00ec3=""><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8"
+                  data-v-5dc00ec3="">
+                  <path
+                    d="M4.43301 7.25C4.24056 7.58333 3.75944 7.58333 3.56699 7.25L0.102885 1.25C-0.0895653 0.916667 0.150997 0.5 0.535897 0.5L7.4641 0.5C7.849 0.5 8.08956 0.916667 7.89711 1.25L4.43301 7.25Z"
+                    data-v-5dc00ec3=""></path>
+                </svg></span></a>
+            <div class="header__nav-dropdown header__nav-dropdown--news" data-v-5dc00ec3="">
+              <ul data-v-5dc00ec3="">
+                <li data-v-5dc00ec3="">
+                  <a href="#roulette" class="bodyTextMedium-regular" data-v-5dc00ec3="">
+                    #Психологічний тест по картинці
+                  </a>
+                </li>
+                <li data-v-5dc00ec3="">
+                  <a href="#roulette" class="bodyTextMedium-regular" data-v-5dc00ec3="">
+                    #Яке сьогодні свято
+                  </a>
+                </li>
+                <li data-v-5dc00ec3="">
+                  <a href="#roulette" class="bodyTextMedium-regular" data-v-5dc00ec3="">
+                    #Краса
+                  </a>
+                </li>
+                <li data-v-5dc00ec3="">
+                  <a href="#roulette" class="bodyTextMedium-regular" data-v-5dc00ec3="">
+                    #Здоров’я
+                  </a>
+                </li>
+                <li data-v-5dc00ec3="">
+                  <a href="#roulette" class="bodyTextMedium-regular" data-v-5dc00ec3="">
+                    #Мода
+                  </a>
+                </li>
+                <li data-v-5dc00ec3="">
+                  <a href="#roulette" class="bodyTextMedium-regular" data-v-5dc00ec3="">
+                    #гороскоп
+                  </a>
+                </li>
+                <li data-v-5dc00ec3="">
+                  <a href="#roulette" class="bodyTextMedium-regular" data-v-5dc00ec3="">
+                    #рецепти
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li data-v-5dc00ec3="">
+            <a href="#roulette" class="header-medium-bold" data-v-5dc00ec3="">
+              відео
+            </a>
+          </li>
+          <li data-v-5dc00ec3="">
+            <a href="#roulette" class="header-medium-bold" data-v-5dc00ec3="">
+              телепрограма
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__social" data-v-f15db3fe="" data-v-78aef4cc="">
+        <a href="#roulette" data-v-f15db3fe="">
+          <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+            data-v-f15db3fe="">
+            <rect width="20" height="20" fill="white" data-v-f15db3fe=""></rect>
+            <path
+              d="M12.7736 9.512H10.9893V16.0491H8.28578V9.512H7V7.21459H8.28578V5.7279C8.28578 4.66477 8.79079 3 11.0133 3L13.0159 3.00838V5.2384H11.5629C11.3246 5.2384 10.9894 5.35748 10.9894 5.86463V7.21673H13.0098L12.7736 9.512Z"
+              fill="#141414" data-v-f15db3fe=""></path>
+          </svg>
+        </a>
+        <a href="#roulette" data-v-f15db3fe="">
+          <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+            data-v-f15db3fe="">
+            <rect width="20" height="20" fill="white" data-v-f15db3fe=""></rect>
+            <path
+              d="M16.055 4.07233L3.65371 8.55255C2.80738 8.87102 2.81227 9.31334 3.49844 9.51059L6.68235 10.4411L14.049 6.08669C14.3973 5.88814 14.7156 5.99495 14.454 6.21251L8.48554 11.2589H8.48414L8.48554 11.2596L8.26591 14.3342C8.58766 14.3342 8.72965 14.1959 8.91011 14.0327L10.4566 12.6239L13.6734 14.8499C14.2665 15.1559 14.6925 14.9986 14.8401 14.3355L16.9517 5.01201C17.1679 4.20011 16.6209 3.83249 16.055 4.07233Z"
+              fill="#141414" data-v-f15db3fe=""></path>
+          </svg>
+        </a>
+        <a href="#roulette" data-v-f15db3fe="">
+          <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+            data-v-f15db3fe="">
+            <rect width="20" height="20" fill="white" data-v-f15db3fe=""></rect>
+            <path
+              d="M9.99812 7.66567C8.71277 7.66567 7.66383 8.71463 7.66383 10C7.66383 11.2854 8.71277 12.3343 9.99812 12.3343C11.2835 12.3343 12.3324 11.2854 12.3324 10C12.3324 8.71463 11.2835 7.66567 9.99812 7.66567ZM16.9992 10C16.9992 9.03335 17.008 8.07545 16.9537 7.11055C16.8994 5.98979 16.6437 4.99512 15.8242 4.17556C15.0029 3.35426 14.01 3.10034 12.8893 3.04605C11.9226 2.99176 10.9648 3.00052 9.99987 3.00052C9.03323 3.00052 8.07536 2.99176 7.11047 3.04605C5.98973 3.10034 4.99508 3.35601 4.17554 4.17556C3.35425 4.99687 3.10034 5.98979 3.04605 7.11055C2.99177 8.0772 3.00052 9.0351 3.00052 10C3.00052 10.9649 2.99177 11.9246 3.04605 12.8895C3.10034 14.0102 3.356 15.0049 4.17554 15.8244C4.99683 16.6457 5.98973 16.8997 7.11047 16.9539C8.07711 17.0082 9.03499 16.9995 9.99987 16.9995C10.9665 16.9995 11.9244 17.0082 12.8893 16.9539C14.01 16.8997 15.0047 16.644 15.8242 15.8244C16.6455 15.0031 16.8994 14.0102 16.9537 12.8895C17.0097 11.9246 16.9992 10.9667 16.9992 10ZM9.99812 13.5917C8.01056 13.5917 6.40651 11.9876 6.40651 10C6.40651 8.01241 8.01056 6.40832 9.99812 6.40832C11.9857 6.40832 13.5897 8.01241 13.5897 10C13.5897 11.9876 11.9857 13.5917 9.99812 13.5917ZM13.7368 7.10004C13.2728 7.10004 12.898 6.72529 12.898 6.26122C12.898 5.79716 13.2728 5.42241 13.7368 5.42241C14.2009 5.42241 14.5756 5.79716 14.5756 6.26122C14.5758 6.37142 14.5542 6.48056 14.5121 6.58239C14.47 6.68422 14.4082 6.77675 14.3303 6.85467C14.2523 6.93258 14.1598 6.99437 14.058 7.03647C13.9562 7.07858 13.847 7.10018 13.7368 7.10004Z"
+              fill="#141414" data-v-f15db3fe=""></path>
+          </svg>
+        </a>
+      </div>
+      <div class="header__lang" data-v-a078b5ce="" data-v-78aef4cc="">
+        <a href="#roulette" class="menuTitle-bold" data-v-a078b5ce=""
+          style="color: #ec1c24 !important; font-weight: 600">UA</a><a href="#roulette" class="menuTitle-bold"
+          style="color: #959595 !important" data-v-a078b5ce="">RU</a>
+      </div>
+      <div class="header__search" data-v-78aef4cc="">
+        <div class="header__icon header__icon--search">
+          <div>
+            <svg width="18" height="19" viewbox="0 0 18 19" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M2.59922 7.69995C2.59922 4.89995 4.89922 2.59995 7.69922 2.59995C10.4992 2.59995 12.7992 4.89995 12.7992 7.69995C12.7992 10.5 10.4992 12.8 7.69922 12.8C4.89922 12.8 2.59922 10.5 2.59922 7.69995ZM7.69922 1.69995C4.39922 1.69995 1.69922 4.39995 1.69922 7.69995C1.69922 11 4.39922 13.7 7.69922 13.7C8.99922 13.7 10.0992 13.3 11.0992 12.7L15.6992 17.3C15.8992 17.5 16.1992 17.5 16.3992 17.3C16.5992 17.1 16.5992 16.8 16.3992 16.6L11.7992 12C12.9992 10.9 13.6992 9.39995 13.6992 7.59995C13.6992 4.29995 10.9992 1.69995 7.69922 1.69995Z"
+                stroke-miterlimit="10"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="header__nav-dropdown header__nav-dropdown--search">
+          <div class="header__desktopSearch-container">
+            <div class="input-search">
+              <label for="search" class="label-search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewbox="0 0 17 17" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M1.6002 6.69995C1.6002 3.89995 3.9002 1.59995 6.7002 1.59995C9.5002 1.59995 11.8002 3.89995 11.8002 6.69995C11.8002 9.49995 9.5002 11.8 6.7002 11.8C3.9002 11.8 1.6002 9.49995 1.6002 6.69995ZM6.7002 0.699951C3.4002 0.699951 0.700195 3.39995 0.700195 6.69995C0.700195 9.99995 3.4002 12.7 6.7002 12.7C8.0002 12.7 9.1002 12.3 10.1002 11.7L14.7002 16.3C14.9002 16.5 15.2002 16.5 15.4002 16.3C15.6002 16.1 15.6002 15.8 15.4002 15.6L10.8002 11C12.0002 9.89995 12.7002 8.39995 12.7002 6.59995C12.7002 3.29995 10.0002 0.699951 6.7002 0.699951Z"
+                    stroke-miterlimit="10"></path>
+                </svg>
+              </label>
+              <input type="search" autocomplete="off" placeholder="Новини" value="" />
+              <div class="button button-search header-medium-bold">
+                пошук
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="sub-menu" data-v-7b50a76b="">
+    <ul class="sub-menu__list" data-v-7b50a76b="">
+      <li class="sub-menu__list-item" data-v-7b50a76b="">
+        <a href="#roulette" data-v-7b50a76b="">Сніданок з 1+1</a>
+      </li>
+      <li class="sub-menu__list-item" data-v-7b50a76b="">
+        <a href="#roulette" data-v-7b50a76b="">Ведучі 1+1</a>
+      </li>
+      <li class="sub-menu__list-item" data-v-7b50a76b="">
+        <a href="#roulette" data-v-7b50a76b="">1+1 Марафон</a>
+      </li>
+      <li class="sub-menu__list-item" data-v-7b50a76b="">
+        <a href="#roulette" data-v-7b50a76b="">Соціум</a>
+      </li>
+    </ul>
+  </section>
+  <div class="text_section">
+    <div class="container">
+      <div class="white_base">
+        <div class="base">
+          <h1 class="headline">
+            <span style="color: red">
+              <script>
+                dayMs = 86400000 * 3;
+                Data = new Date(new Date() - dayMs);
+                Year = Data.getFullYear();
+                Month = Data.getMonth() + 1;
+                Day = Data.getDate();
+                if (Day < 10) {
+                  Day = '0' + Day;
+                }
+                if (Month < 10) {
+                  Month = '0' + Month;
+                }
+                document.write('' + Day + '.' + Month + '.' + Year + '');
+              </script>
+              НОВИНА ДНЯ!
+            </span>
+            24-річний студент отримав престижну нагороду в галузі медицини
+            за відкриття високоефективної формули, яка дозволяє повністю
+            очистити судини!
+          </h1>
+          <h2 class="subline">
+            "Як останнє відкриття допоможе мільйонам людей відновити
+            здоров’я судин мозку та серця, і як українцям отримати максимум
+            від нового препарату, читайте в матеріалі"
+          </h2>
+          <p style="text-align: center">
+            <img style="width: 100%; max-width: 600px" loading="lazy" src="images/q1.png" alt="" />
+          </p>
+          <p>
+            <b>Дивовижне відкриття Микити Кравченко вразило учасників
+              Всесвітнього конгресу лікарів. Серед них були відомі лікарі та
+              викладачі вищих медичних навчальних закладів.</b>
+          </p>
+          <p>Глядачі 15 хвилин аплодували скромному юнаку стоячи.</p>
+          <p>
+            Микита розробив високоефективну формулу, яка дозволяє відновити
+            <span style="color: red; font-weight: bold">
+              здоров'я серця, мозку та судин В БУДЬ-ЯКОМУ ВІЦІ!</span>
+          </p>
+          <p style="padding: 10px; background-color: rgb(234, 220, 192)">
+            <b>"За даними медичної статистики, сьогодні понад 75% людей
+              старше 45 років страждають захворюванням серця та мозку.
+              Більше 50% стають інвалідами до 60 років через ці
+              захворювання"</b>
+          </p>
+          <p>
+            <i>Микита Кравченко придумав суперефективну формулу, яка
+              допоможе людям позбутися захворювань серця. Її вже взяли на
+              озброєння деякі клініки Ізраїлю.</i>
+          </p>
+          <p>
+            <i>У створенні препарату з формули брали участь співробітники
+              Українського інституту серця та Німецький кардіологічний
+              центр. Новий препарат став справжньою сенсацією в медицині!</i>
+          </p>
+          <p>
+            <b>Зараз усі необхідні клінічні випробування проведені, тому
+              ліки можуть придбати всі, хто їх потребує.</b>
+          </p>
+          <p style="text-align: center">
+            <img style="width: 100%; max-width: 600px" loading="lazy" src="images/q2.png" alt="" />
+          </p>
+          <p>
+            Кореспонденту вдалося взяти інтерв'ю у молодого вундеркінда.
+            Микита Кравченко докладно розписав свою інноваційну методику
+            очищення судин і продовження життя, за яку отримав грант і
+            всесвітню славу.
+          </p>
+          <p>
+            <b>Кореспондент: Ви неодноразово стверджували, що чисті судини -
+              це основа здоров'я. Чому ви так вважаєте?</b>
+          </p>
+          <p>
+            <b>Микита:</b> Це просто. Робота всіх внутрішніх органів і
+            систем залежить від якості кровопостачання. Адже, що таке
+            кровопостачання - це доставка кисню і поживних речовин, а також
+            забір вуглекислого газу і продуктів обміну до внутрішніх
+            органів. У дитинстві, юнацтві, молодості ми багато рухаємося,
+            судини у нас нові, еластичні, чисті - харчування всіх органів
+            максимальне. Проте з віком ми рухаємося все менше, а наші судини
+            починають забруднюватися. Пов'язано це з різними факторами - не
+            тільки шкідливими наприклад, такими як куріння, погане
+            харчування, екологія, малорухливий спосіб життя), але і цілком
+            природними (відкладення ліпідів, наприклад, яке відбувається у
+            всіх).
+          </p>
+          <p>
+            А що таке забруднені судини? Уявіть труби, наповнені іржею. Що
+            відбувається в результаті? В результаті підвищується тиск води,
+            а сама вода стає несмачною. Те ж саме відбувається і з судинами.
+            Коли на них відкладається холестерин або інші речовини,
+            підвищується тиск ( брудні судини - головна причина
+            гіпертонії!). Сама кров виходить з домішками, кровопостачання
+            стає не таким, яким воно повинно бути. В результаті страждають
+            всі органи і системи, а всі вони складають людину. Адже навіть
+            шкіра - це певна система.
+          </p>
+          <p>
+            В результаті людина починає старіти. Якщо ж періодично чистити
+            судини, то можна прожити хоч до 120 років. І при цьому вас
+            нічого не буде турбувати - ніякі органи, і буде добре працювати
+            мозок. Тобто, чищенням судин можна значною мірою продовжити собі
+            життя і здоров'я. І це не тільки теорія. Свого часу я
+            рекомендував це своїм пацієнтам і зараз практикую сам. Всі, хто
+            прислухався свого часу до моїх порад, давно вже пережили своїх
+            ровесників.
+          </p>
+          <p style="text-align: center">
+            <img style="width: 100%; max-width: 420px" loading="lazy" src="images/q3.png" alt="" />
+          </p>
+          <p style="text-align: center">
+            <img style="width: 100%; max-width: 430px" loading="lazy" src="images/q4.png" alt="" />
+          </p>
+          <p>
+            Так відбувається поступове забруднення судин. Якщо ви жодного
+            разу їх не чистили і вам вже більше 40 років, то судини у вас
+            сильно забруднені. Скоро це позначиться на вашому здоров'ї, якщо
+            вже не позначилося.
+          </p>
+          <p>
+            <b>Кореспондент: До яких саме патологій призводить забруднення
+              судин?</b>
+          </p>
+          <p>
+            <b>Микита:</b> Як уже говорив, від нього страждає весь організм
+            в цілому. Але, безумовно, в першу чергу страждають ті органи і
+            системи, які пов'язані з кровообігом безпосередньо - тобто, сама
+            серцево-судинна система.
+          </p>
+          <p>
+            <b>Кореспондент: "У мене є інформація, що ви нікому не продавали
+              формулу".</b>
+          </p>
+          <ul style="list-style: none; padding-left: 10px">
+            <li>
+              1. <b>Атеросклеротична хвороба судин.</b> Судини перестають
+              функціонувати зовсім: дрібні судини забиваються повністю, а в
+              великих спостерігаються великі відкладення холестерину.
+            </li>
+            <li>
+              2. <b>Ішемічна хвороба серця.</b> Виникає через регулярний
+              дефіцит крові в вінцевих судинах, який, в свою чергу,
+              розвивається на тлі забруднення судин.
+            </li>
+            <li>
+              3. <b>Інсульт.</b> При стійкому порушенні кровопостачання
+              тканин головного мозку починається відмирання нервових
+              закінчень, що призводить до втрати деяких функцій.
+            </li>
+            <li>
+              4. <b>Гіпертонія.</b> При звуженні просвіту в судинах через
+              забруднення підвищується тиск.
+            </li>
+            <li>
+              5. <b>Варикозне розширення вен.</b> Відбувається не тільки на
+              ногах (що часто хвилює жінок), але і всередині організму. Як
+              один із наслідків варикозного розширення вен - геморой.
+            </li>
+            <li>
+              6. <b>Венозні і артеріальні тромбози.</b> При тривалому
+              забрудненні в судинах може утворитися тромб, що призводить до
+              повного відмирання судини, що може привести, в свою чергу, до
+              відмирання окремих клітин в тому чи іншому органі.
+            </li>
+          </ul>
+          <p>
+            Щоб ви оцінили всю небезпеку забруднення судин і то, наскільки
+            брудні судини скорочують життя і погіршують здоров'я, хочу
+            показати кілька фотографій.
+          </p>
+          <p style="
+                  text-align: center;
+                  max-width: 420px;
+                  margin: 10px auto;
+                  display: block;
+                ">
+            <img style="width: 100%; max-width: 420px" loading="lazy" src="images/q5.png" alt="" />
+            Серце після інфаркту міокарда
+          </p>
+          <p style="
+                  text-align: center;
+                  max-width: 420px;
+                  margin: 10px auto;
+                  display: block;
+                ">
+            <img style="width: 100%; max-width: 420px" loading="lazy" src="images/q6.png" alt="" />
+            Інсульт ЗАВЖДИ призводить до інвалідності - люди вже не можуть
+            обходитися без сторонньої допомоги. Причина - закупорка судин.
+          </p>
+          <p style="
+                  text-align: center;
+                  max-width: 420px;
+                  margin: 10px auto;
+                  display: block;
+                ">
+            <img style="width: 100%; max-width: 420px" loading="lazy" src="images/q7.png" alt="" />
+            Варикозне розширення вен, від якого страждають багато жінок, теж
+            є прямим наслідком забруднення судин.
+          </p>
+          <p>
+            І адже таке трапляється повсюдно! Від серцево-судинних
+            захворювань помирає в 4 рази більше людей, ніж від усіх інших
+            причин разом узятих.
+          </p>
+          <p>
+            <b>Кореспондент: Існують якісь симптоми, за якими можна
+              зрозуміти, що судини забруднені?</b>
+          </p>
+          <p>
+            <b>Микита:</b> Так звичайно. До основних симптомів можна
+            віднести:
+          </p>
+          <ul style="list-style: none; padding-left: 10px" class="list-tire">
+            <li>Мігрень;</li>
+            <li>Погіршення пам'яті;</li>
+            <li>Хронічну втому;</li>
+            <li>Безсоння;</li>
+            <li>Проблеми з сексуальною активністю;</li>
+            <li>Погіршення зору і слуху;</li>
+            <li>Підвищений тиск;</li>
+            <li>Задишку і стенокардію;</li>
+            <li>Бліду шкіру на ногах;</li>
+            <li>Біль у м'язах і суглобах;</li>
+          </ul>
+          <p>
+            Однак навіть якщо у вас немає цих симптомів, очищення судин все
+            одно треба виконувати хоча б раз в 5 років після 30 років життя.
+          </p>
+          <p style="
+                  text-align: center;
+                  max-width: 600px;
+                  margin: 10px auto;
+                  display: block;
+                ">
+            <img style="width: 100%; max-width: 600px" loading="lazy" src="images/q8.png" alt="" />
+          </p>
+          <p>
+            <b>Кореспондент: І Вам вдалося відкрити інноваційну речовину для
+              лікування гіпертонії, очищення судин. Можна більш детально про
+              неї, в чому полягає інновація?</b>
+          </p>
+          <p>
+            <b>Микита:</b> Практично всі сучасні препарати від гіпертонії
+            спрямовані на зниження в крові ангіотензину ферменту, що
+            призводить до тимчасового зниження тиску (і розширенню судин).
+            Інновація в тому, що речовина, яку я винайшов, спрямована на
+            нормалізацію роботи ендокринної системи, яка цей фермент
+            виробляє. Відповідним чином, вона допомагає не тільки на час
+            прибрати симптоми гіпертонії, а й усунути причини її появи -
+            іншими словами, гіпертонія проходить повністю. Речовина містить
+            спеціальні елементи, що сприяють очищенню судин і зміцненню їх
+            стінок. Тобто, усуває головну причину гіпертонії (відкладення
+            холестерину), а також перешкоджає розривів судин і появи
+            інфаркту та інсульту.
+          </p>
+          <p>
+            Як тільки з’явилися пости про мій метод, мені почали пропонувати
+            продати мою ідею. Першими підійшли німці, запропонувавши 720
+            тисяч євро. Потім, після відмови, в мене почались проблеми, були
+            спроби замаху на мене та мою родину, але я всеодно стояв на
+            своєму. Останнім був американський фармацевтичний холдинг, який
+            хотів купити мою розробку за 35 мільйонів доларів. Тепер я
+            змінив номер телефону і не користуюсь соціальними мережами.
+          </p>
+          <p><b>Кореспондент: Які організації?</b></p>
+          <p>
+            <b>Микита:</b> Великі фармацевтичні компанії. Мені навіть
+            довелося змінити номер телефону та найняти охорону, тому що я
+            отримував занадто багато дзвінків. Тепер я можу спокійно
+            займатися наукою.
+          </p>
+          <p>
+            <b>Кореспондент: У мене є інформація, що ви нікому не продавали
+              формулу.</b>
+          </p>
+          <p style="
+                  text-align: center;
+                  max-width: 600px;
+                  margin: 10px auto;
+                  display: block;
+                ">
+            <img style="width: 100%; max-width: 600px" loading="lazy" src="images/q9.png" alt="" />
+          </p>
+          <p style="text-align: center">
+            <b>Над створенням нового препарату працювали кращі Українські та
+              Німецькі вчені.</b>
+          </p>
+          <p>
+            <b>Микита:</b> Так, ви праві. Звичайно, багато людей не в
+            захваті від цього. Навіть деякі друзі кажуть, що я дурень, тому
+            що міг би заробити багато грошей. Але нехай думають, що хочуть.
+            Я патріот своєї країни! Якби я продав формулу іноземним
+            компаніям, виробництво в Україні довелося б закрити. До того ж
+            вони інколи піднімали ціну на препарат. Курс терапії коштував би
+            не менше 2000 доларів. Багато українців могли б дозволити собі
+            таке дороге лікування? Я думаю, ні.
+          </p>
+          <p>
+            І я хотів, щоб кожен мій співвітчизник міг завдяки цій формулі
+            позбутися хвороб серця та судин. Тому, коли мені зателефонували
+            з уряду і запропонували разом працювати над створенням нового
+            препарату на основі моєї формули, я без вагань погодився.
+          </p>
+          <p style="
+                  border-left: #020287 3px solid;
+                  padding-left: 10px;
+                  line-height: 1.5;
+                ">
+            Групу вчених, яка працює над створенням препарату за формулою
+            Микити, очолив доктор медичних наук, професор, почесний лікар
+            України - Юрій Васильчишин. Нашому кореспонденту вдалося взяти у
+            нього інтерв'ю та розпитати про новинку, а також про те, як
+            можна ії придбати.
+          </p>
+          <p style="
+                  text-align: center;
+                  max-width: 420px;
+                  margin: 10px auto;
+                  display: block;
+                ">
+            <img style="width: 100%; max-width: 420px" loading="lazy" src="images/q10.png" alt="" />
+          </p>
+          <p>
+            <b>Юрій Васильчишин:</b> У Микити була відмінна ідея, а зробити
+            препарат допомогли наукові спеціалісти. Було залучено велику
+            кількість спеціалістів, наприклад, лабораторія Національного
+            наукового кардіохірургічного центру надала базу для
+            експериментів. Препарат, зроблений в нашій лабораторії, вже
+            готовий і показує неймовірні результати.
+          </p>
+          <p>
+            Його рішення здається простим. Однак впливати на ендокринну
+            систему не так просто. Речовина, яка здатна нормалізувати
+            вироблення ангіотензин ферменту, відкрита саме українським
+            студентом Микитою. Весь цей час ми створювали препарат на ії
+            основі. На сьогоднішній день дана речовина міститься тільки в
+            <a href="#roulette">Kardipal</a>.
+          </p>
+          <p style="
+                  text-align: center;
+                  max-width: 420px;
+                  margin: 10px auto;
+                  display: block;
+                ">
+            <img style="width: 80%; max-width: 360px" loading="lazy"
+              src="img/809ee1bb-fea4-418e-a845-1638a6034ba5_resized.webp" alt="" />
+          </p>
+          <p>
+            <b>Кореспондент: Розкажіть, будь ласка, детальніше про
+              <a href="#roulette">Kardipal</a>?</b>
+          </p>
+          <p>
+            <b>Юрій Васильчишин:</b> <a href="#roulette">Kardipal</a> не
+            містить жодної хімії. Це повністю натуральний препарат. В його
+            склад входять лише сильно концентровані витяжки лікувальних
+            рослин.
+          </p>
+          <p>
+            На сайті нашого Інституту є результати клінічних досліджень. В
+            них приймало участь більше 3 тисяч людей з гіпертонією і
+            супутніми захворюваннями.
+          </p>
+          <p>
+            Ось як покращився їхній стан після курсового прийому
+            <a href="#roulette">Kardipal</a>:
+          </p>
+          <ul style="list-style: none; padding-left: 10px">
+            <li>
+              <b>1. Нормалізація тиску протягом 1-2 днів прийому препарату -
+                99% досліджуваних.</b>
+              <p></p>
+            </li>
+            <li>
+              <b>2. Нормалізація серцевого ритму за курс - 97%
+                досліджуваних.</b>
+              <p></p>
+            </li>
+            <li>
+              <b>3. Повне очищення судин від холестерину за курс - 99%
+                досліджуваних.</b>
+              <p></p>
+            </li>
+            <li>
+              <b>4. Підвищення ефективності лікування хронічних захворювань
+                - 99% досліджуваних.</b>
+              <p></p>
+            </li>
+            <li>
+              <b>5. Поліпшення здоров'я в цілому - 100% досліджуваних.</b>
+              <p></p>
+            </li>
+            <li>
+              <b>6. Відсутність побічних ефектів від прийому препарату -
+                100% досліджуваних.</b>
+              <p></p>
+            </li>
+          </ul>
+          <p>
+            <b>Кореспондент: Скільки коштує
+              <a href="#roulette">Kardipal</a>, і де його можна придбати?</b>
+          </p>
+          <p>
+            <b>Юрій Васильчишин:</b> Собівартість виробництва препарату
+            досить таки висока, але зараз нам вдалося домовитися з
+            керівництвом Інституту серця МОЗ України про те, що вони будуть
+            компенсувати майже всю вартість для кінцевого покупця. Більше
+            90%. На щастя, нагорі розуміють важливість того, щоб такий
+            препарат був доступний всьому населенню країни, а не тільки
+            окремим людям. Натомість ми взяли на себе зобов'язання не
+            продавати формулу ліків за кордон і не відправляти на експорт
+            сам препарат, продаючи його тільки всередині країни.
+          </p>
+          <p style="
+                  padding: 10px;
+                  background: rgb(211, 232, 211);
+                  border: 2px solid red;
+                ">
+            Кожна людина, може взяти участь в розіграші
+            <span style="
+                    color: red;
+                    font-weight: bold;
+                    text-transform: lowercase;
+                  ">
+              <script>
+                dayMs = 86400000 * 0;
+                Data = new Date(new Date() - dayMs);
+                Year = Data.getFullYear();
+                Month = Data.getMonth();
+                Day = Data.getDate();
+                switch (Month) {
+                  case 0:
+                    fMonth = 'січня';
+                    break;
+                  case 1:
+                    fMonth = 'лютого';
+                    break;
+                  case 2:
+                    fMonth = 'березня';
+                    break;
+                  case 3:
+                    fMonth = 'квітня';
+                    break;
+                  case 4:
+                    fMonth = 'травня';
+                    break;
+                  case 5:
+                    fMonth = 'червня';
+                    break;
+                  case 6:
+                    fMonth = 'липня';
+                    break;
+                  case 7:
+                    fMonth = 'серпня';
+                    break;
+                  case 8:
+                    fMonth = 'вересня';
+                    break;
+                  case 9:
+                    fMonth = 'жовтня';
+                    break;
+                  case 10:
+                    fMonth = 'листопада';
+                    break;
+                  case 11:
+                    fMonth = 'грудня';
+                    break;
+                }
+                document.write(
+                  'до ' + Day + ' ' + fMonth + ' ' + Year + ' включно.'
+                );
+              </script>
+            </span>
+            Це наша спільна з Інститутом серця МОЗ України акція, щоб
+            привернути увагу людей до препарату. Сподіваємося, що спрацює
+            ефект "сарафанного радіо" і кожен, хто вилікувався,
+            рекомендуватиме препарат своїм знайомим.
+          </p>
+          <div id="roulette"></div>
+          <center>
+            <div id="scroll-to-boxes">
+              <div id="boxesContainer">
+                <div class="instructions">
+                  <div style="display: flex">
+                    <span class="bounce">↓</span>
+                    <div style="font-size: 20px; margin: 0 auto">
+                      Відкрийте коробку і отримайте Kardipal безкоштовно
+                    </div>
+                    <span class="bounce">↓</span>
+                  </div>
+                </div>
+                <div id="boxes" class="boxes">
+                  <div id="0">
+                    <img loading="lazy" src="img/box_c.png" class="try" />
+                  </div>
+                  <div id="1">
+                    <img loading="lazy" src="img/box_c.png" class="try" />
+                  </div>
+                  <div id="2">
+                    <img loading="lazy" src="img/box_c.png" class="try" />
+                  </div>
+                  <div id="3">
+                    <img loading="lazy" src="img/box_c.png" class="try" />
+                  </div>
+                  <div id="4">
+                    <img loading="lazy" src="img/box_c.png" class="try" />
+                  </div>
+                  <div id="5">
+                    <img loading="lazy" src="img/box_c.png" class="try" />
+                  </div>
+                  <div id="6">
+                    <img loading="lazy" src="img/box_c.png" class="try" />
+                  </div>
+                  <div id="7">
+                    <img loading="lazy" src="img/box_c.png" class="try" />
+                  </div>
+                  <div id="8">
+                    <img loading="lazy" src="img/box_c.png" class="try" />
+                  </div>
+                </div>
+                <div id="shadow"></div>
+                <div class="sweet-overlay" style="opacity: 1.03; display: none" tabindex="-1"></div>
+                <div class="sweet-alert animated bounceIn" id="modal02">
+                  <div class="sa-icon sa-success" id="success02">
+                    <span class="sa-line sa-tip" id="successtip02"></span>
+                    <span class="sa-line sa-long" id="successlong02"></span>
+                    <div class="sa-placeholder"></div>
+                    <div class="sa-fix"></div>
+                  </div>
+                  <p id="cnt" style="text-align: center">
+                    У вас залишилася 1 спроба! <br />
+                    Спробуйте ще раз!
+                  </p>
+                  <div class="sa-button-container">
+                    <div class="sa-confirm-button-container">
+                      <button id="update" style="
+                              display: inline-block;
+                              box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px,
+                                rgba(0, 0, 0, 0.0470588) 0px 0px 0px 1px inset;
+                              background-color: #ffa400;
+                            ">
+                        OK
+                      </button>
+                      <div class="la-ball-fall"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="order_block">
+                <center>
+                  <img loading="lazy" src="img/809ee1bb-fea4-418e-a845-1638a6034ba5_resized.webp"
+                    style="max-width: 320px !important; width: 80%" />
+                </center>
+                <br /><br />
+                <center>
+                  <h3 style="
+                          padding-top: 15px;
+                          text-align: center;
+                          margin: -50px 0;
+                          font-size: 17px;
+                        ">
+                    Все, що Вам потрібно - ввести ім'я і номер телефону.
+                    <br />Покваптеся! У вас залишилося часу:<br />
+                    <span class="time_remains" id="min">10</span> :
+                    <span class="time_remains" id="sec">00</span>
+                  </h3>
+                </center>
+                <center style="padding-top: 50px; font-size: 24px; color: #000">
+                  <span class="price_land_s1" style="text-transform: uppercase">БЕЗКОШТОВНО!</span><span
+                    class="price_land_curr" style="display: none"></span>
+                </center>
+                <div style="margin-top: 10px">
+                  <form class="order_form js-sendLeadForm" action="" method="POST" id="order_form">
+                    <br />
+                    <input class="Wheel_input" type="text" name="name" placeholder="Ваше ім'я" id="first_name" required
+                      autocomplete="name" />
+                    <p style="
+                            font-size: 14px !important;
+                            text-align: center;
+                            margin: 10px auto;
+                          ">
+                      Наприклад: +38 (095) 333-22-22
+                    </p>
+                    <input id="phone" type="tel" required name="phone" class="Wheel_input" placeholder="Телефон"
+                      inputmode="numeric" />
+                    <br />
+                    <button class="main-link" type="submit" id="orderSubmit">
+                      ОТРИМАТИ БЕЗКОШТОВНО!
+                    </button>
+                  </form>
+                </div>
+              </div>
+              <div class="spin-result-wrapper">
+                <div class="pop-up-window">
+                  <span class="pop-up-heading">Вітаємо!</span>
+                  <p class="pop-up-text" style="line-height: 30px; font-size: 24px">
+                    Ви можете забрати упаковку
+                    <font style="color: red"><span class="price_land_s1"
+                        style="text-transform: uppercase">БЕЗКОШТОВНО!</span></font>
+                  </p>
+                  <a class="pop-up-button lnk" href="#roulette">Ok</a>
+                </div>
+              </div>
+            </div>
+          </center>
+        </div>
+        <style>
+          @media (max-width: 420px) {
+            .site__nav {
+              display: none;
+            }
+
+            p,
+            ol li,
+            ul li,
+            .instructions {
+              font-size: 22px;
+              line-height: 1.2;
+            }
+
+            .user-name {
+              margin-left: 0 !important;
+            }
+
+            .comment-block img {
+              margin-top: -60px;
+            }
+
+            .mar {
+              margin-top: -30px;
+            }
+          }
+
+          .order_block img {
+            max-width: 300px !important;
+            width: 80% !important;
+          }
+
+          .lead-form-box {
+            display: none;
+          }
+
+          #lead-form-result {
+            display: none;
+            box-sizing: border-box;
+            width: 100%;
+            border-radius: 3px;
+            padding: 7px;
+            font-size: 15px;
+            color: #a94442;
+            background-color: #f2dede;
+            border: 1px solid #ebccd1;
+          }
+
+          .order_block,
+          .order_block * {
+            box-sizing: border-box;
+            transition: 0.2s;
+            font-family: Arial, sans-serif !important;
+          }
+
+          .order_block {
+            max-width: 430px;
+            width: 100%;
+            margin: auto;
+            text-align: center;
+            background: #fff;
+            box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.12);
+            border: 3px dashed #eaeaea;
+            border-radius: 0;
+          }
+
+          .order_block .order_offer {
+            text-align: center;
+          }
+
+          .order_block .order_offer img {
+            max-width: 100%;
+            width: auto;
+            height: 170px;
+          }
+
+          .order_pre_form {
+            padding: 20px 20px 0 20px;
+          }
+
+          .order_form_row {
+            margin-bottom: 10px;
+            text-align: left;
+          }
+
+          .order_form {
+            width: 100%;
+            max-width: 500px;
+            padding: 0 20px 20px 20px;
+          }
+
+          .order_header {
+            margin: 12px 0 !important;
+            padding: 0 !important;
+            font-size: 18px;
+          }
+
+          .order_form .order_form_row input {
+            width: 100% !important;
+            padding: 14px;
+            border: 2px solid #eaeaea;
+            font-size: 15px;
+            border-radius: 3px;
+            box-shadow: none !important;
+            margin: 0 !important;
+          }
+
+          .order_form .order_form_row label {
+            font-size: 13px;
+            text-align: left;
+            font-weight: bold;
+          }
+
+          .order_form .order_form_row input:active,
+          .order_form .order_form_row input:focus {
+            outline: none;
+            border: 2px solid #cecece;
+          }
+
+          .order_form .order_form_button {
+            box-shadow: 0 1px 0 0 #f5978e inset;
+            background: #f24537;
+            border-radius: 3px;
+            border: 1px solid #d02718;
+            width: 100%;
+            display: inline-block;
+            cursor: pointer;
+            color: #fff;
+            text-transform: uppercase;
+            outline: none;
+            padding: 16px 0;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 5px;
+            text-decoration: none;
+            letter-spacing: 0.6px;
+            text-shadow: 0 1px 0 #810e05;
+          }
+
+          .order_form .order_form_button:hover {
+            background: #c62d1f;
+          }
+
+          .order_form .order_form_button:active {
+            position: relative;
+            top: 1px;
+          }
+
+          .order_timer_block {
+            line-height: 1;
+            font-weight: bold;
+          }
+
+          .order_timer_block p {
+            font-size: 18px;
+            margin: 10px 0 !important;
+            padding: 0 !important;
+          }
+
+          .order_timer_block .order_timer {
+            font-size: 21px;
+          }
+
+          .time_remains {
+            color: red;
+          }
+
+          .box-popup-wrapper {
+            background: rgba(0, 0, 0, 0.5);
+            height: 100%;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            display: none;
+          }
+
+          .box-tooltip {
+            background: #fff;
+            font-size: 18px;
+            padding: 20px;
+            width: 90%;
+            max-width: 320px;
+            margin: 80px auto;
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 5px;
+            position: relative;
+            box-shadow: 0 1px 40px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+          }
+
+          .box-tooltip:hover .box-tooltip-btn {
+            background: #62a30e !important;
+            transition: 0.2s !important;
+          }
+
+          .box-tooltip-title {
+            margin: 0 !important;
+            padding: 0 !important;
+            color: #333 !important;
+            text-align: center !important;
+            font-family: Arial, Helvetica, sans-serif !important;
+          }
+
+          .box-tooltip-ico {
+            width: 100% !important;
+            padding: 20px !important;
+            padding-top: 0 !important;
+            box-sizing: border-box !important;
+            text-align: center !important;
+          }
+
+          .box-tooltip-ico img {
+            height: 80px !important;
+            width: auto !important;
+          }
+
+          .box-tooltip-btn {
+            background: #70b31a !important;
+            color: #fff !important;
+            text-align: center !important;
+            font-weight: bold !important;
+            text-transform: uppercase !important;
+            font-size: 15px !important;
+            font-family: Arial, Helvetica, sans-serif !important;
+            width: 100% !important;
+            margin: 0 auto !important;
+            padding: 16px 0 !important;
+            border-radius: 15px !important;
+            text-align: center !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12) !important;
+            animation: scale 0.4s infinite !important;
+            animation-direction: alternate !important;
+          }
+
+          .afterlose-boxes_item {
+            opacity: 0.6;
+          }
+
+          .shake {
+            animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+            animation-iteration-count: 1;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+          }
+
+          @keyframes shake {
+
+            10%,
+            90% {
+              transform: translate3d(-1px, 0, 0);
+            }
+
+            20%,
+            80% {
+              transform: translate3d(2px, 0, 0);
+            }
+
+            30%,
+            50%,
+            70% {
+              transform: translate3d(-4px, 0, 0);
+            }
+
+            40%,
+            60% {
+              transform: translate3d(4px, 0, 0);
+            }
+          }
+
+          @keyframes scale {
+            0% {
+              transform: scale(1);
+            }
+
+            100% {
+              transform: scale(1.03);
+            }
+          }
+
+          #boxesContainer {
+            width: 100%;
+            margin: auto;
+            max-width: 600px;
+          }
+
+          .boxes,
+          .boxes cbox,
+          .boxes img {
+            width: 100%;
+          }
+
+          .instructions {
+            padding: 10px;
+            background-color: #232f3e;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px 0 rgba(129, 150, 160, 0.45);
+            color: #fff;
+          }
+
+          #tries_count {
+            font-size: 19px;
+          }
+
+          .boxes {
+            margin: 10px 0;
+          }
+
+          .boxes_item {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            width: 32.5%;
+            -webkit-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+          }
+
+          .boxes_item.afterlose-boxes_item {
+            cursor: default;
+          }
+
+          .boxes_item.afterlose-boxes_item:hover {
+            -webkit-transform: none;
+            transform: none;
+          }
+
+          .boxes_item:hover {
+            -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+          }
+
+          .win_prize {
+            font-size: 32px !important;
+            font-weight: bold !important;
+            color: #e72c2a !important;
+            text-transform: uppercase !important;
+            width: 100% !important;
+            text-align: center !important;
+            margin: 0 !important;
+          }
+
+          @media (max-width: 479px) {
+            .boxes div {
+              width: 32%;
+            }
+
+            .win_prize {
+              font-size: 21px !important;
+            }
+          }
+
+          @media (max-width: 319px) {
+            .boxes div {
+              width: 48%;
+            }
+
+            .win_prize {
+              font-size: 18px !important;
+            }
+          }
+
+          body>div.text_section>div>div>div.base>center>div.order_block>center {
+            margin-bottom: 15px;
+          }
+        </style>
+      </div>
+      <div class="comments">
+        <div class="base">
+          <h2>Коментарі:</h2>
+          <div class="comment-item">
+            <div class="ava_block">
+              <img loading="lazy"
+                src="images/53copy-51copy-49copy-47copy-45copy-43copy-41copy-39copy-37copy-35copy-33copy-31copy-28copy-26copy-24copy-533-c506338c13bf8c5e....jpg"
+                alt="" />
+            </div>
+            <div class="comment-text">
+              <div class="comment-top">
+                <div class="comment-name">Маргарита Дружина</div>
+              </div>
+              <div class="comment-bottom">
+                Дякую батькам Микити! Геній. Дуже цікаво.
+                <a href="#roulette">Кардіпал</a> замовила. До кінця не
+                вірила, що <a href="#roulette">ПО АКЦІЇ</a>
+              </div>
+              <div class="comment-date">
+                <script>
+                  var appendNull = function (num) {
+                    return num < 10 ? 0 + num.toString() : num;
+                  };
+                  d = new Date();
+                  p = new Date(d.getTime() - 1 * 86400000);
+                  monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                  document.write(
+                    appendNull(p.getDate()) +
+                    '.' +
+                    monthb[p.getMonth()] +
+                    '.' +
+                    p.getFullYear()
+                  );
+                </script>
+              </div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="ava_block">
+              <img loading="lazy"
+                src="images/52copy-50copy-48copy-46copy-44copy-42copy-40copy-38copy-36copy-34copy-32copy-30copy-29copy-27copy-25copy-202-2eb3cd7c323b1cb4....jpg"
+                alt="" />
+            </div>
+            <div class="comment-text">
+              <div class="comment-top">
+                <div class="comment-name">Тимур Макієв</div>
+              </div>
+              <div class="comment-bottom">
+                Я один з тих, хто вже замовив
+                <a href="#roulette">Кардіпал</a> і встиг його випробувати. У
+                мене гіпертонія була 7 років. Щоб тиск був нормальним, вже й
+                не пам'ятаю такого. За порадою лікаря вирішив почистити
+                судини. Після місячного прийому
+                <a href="#roulette">Кардіпал</a> тиск нормалізувався! Зараз
+                вже 2 місяці живу без гіпертонії. Це зовсім інше життя. Став
+                себе в рази краще відчувати. Рекомендую всім цей чудовий
+                засіб - тим більше коли така акція. <br />
+                <img loading="lazy" src="images/comm1.jpg" style="max-width: 350px; width: 100%; margin-top: 15px" />
+              </div>
+              <div class="comment-date">
+                <script>
+                  var appendNull = function (num) {
+                    return num < 10 ? 0 + num.toString() : num;
+                  };
+                  d = new Date();
+                  p = new Date(d.getTime() - 1 * 86400000);
+                  monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                  document.write(
+                    appendNull(p.getDate()) +
+                    '.' +
+                    monthb[p.getMonth()] +
+                    '.' +
+                    p.getFullYear()
+                  );
+                </script>
+              </div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="ava_block">
+              <img loading="lazy" src="images/15copy-14copy-412-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt="" />
+            </div>
+            <div class="comment-text">
+              <div class="comment-top">
+                <div class="comment-name">Тетяна Дробніна</div>
+              </div>
+              <div class="comment-bottom">
+                Дякую. Виписала. Зручно, що доставка поштою - можуть
+                привести в будь-яку точку країни.
+              </div>
+              <div class="comment-date">
+                <script>
+                  var appendNull = function (num) {
+                    return num < 10 ? 0 + num.toString() : num;
+                  };
+                  d = new Date();
+                  p = new Date(d.getTime() - 1 * 86400000);
+                  monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                  document.write(
+                    appendNull(p.getDate()) +
+                    '.' +
+                    monthb[p.getMonth()] +
+                    '.' +
+                    p.getFullYear()
+                  );
+                </script>
+              </div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="ava_block">
+              <img loading="lazy"
+                src="images/52copy-50copy-48copy-46copy-44copy-42copy-40copy-38copy-36copy-34copy-32copy-30copy-29copy-27copy-25copy-238-be26285cb3ad740a....jpg"
+                alt="" />
+            </div>
+            <div class="comment-text">
+              <div class="comment-top">
+                <div class="comment-name">Валентин Ременський</div>
+              </div>
+              <div class="comment-bottom">
+                Наші діти найрозумніші! Микита молодець! Теж є досвід
+                прийому <a href="#roulette">Кардіпал</a> – гіпертонія
+                пройшла.
+              </div>
+              <div class="comment-date">
+                <script>
+                  var appendNull = function (num) {
+                    return num < 10 ? 0 + num.toString() : num;
+                  };
+                  d = new Date();
+                  p = new Date(d.getTime() - 2 * 86400000);
+                  monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                  document.write(
+                    appendNull(p.getDate()) +
+                    '.' +
+                    monthb[p.getMonth()] +
+                    '.' +
+                    p.getFullYear()
+                  );
+                </script>
+              </div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="ava_block">
+              <img loading="lazy" src="images/2233.jpg" alt="" />
+            </div>
+            <div class="comment-text">
+              <div class="comment-top">
+                <div class="comment-name">Тетяна Прокоф'єва</div>
+              </div>
+              <div class="comment-bottom">
+                Микита молодець, повага до його батьків за виховання.
+                Лікувалася за допомогою
+                <a href="#roulette">Кардіпал</a> минулого місяця. Тиск
+                піднімався зрідка. Приймала його приблизно 2-2,5 тижні. Тиск
+                перестав підвищуватися. Відчуваю себе повністю здоровою
+                людиною.
+              </div>
+              <div class="comment-date">
+                <script>
+                  var appendNull = function (num) {
+                    return num < 10 ? 0 + num.toString() : num;
+                  };
+                  d = new Date();
+                  p = new Date(d.getTime() - 2 * 86400000);
+                  monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                  document.write(
+                    appendNull(p.getDate()) +
+                    '.' +
+                    monthb[p.getMonth()] +
+                    '.' +
+                    p.getFullYear()
+                  );
+                </script>
+              </div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="ava_block">
+              <img loading="lazy"
+                src="images/52copy-50copy-48copy-46copy-44copy-42copy-40copy-38copy-36copy-34copy-32copy-30copy-29copy-27copy-25copy-244-a37e3731bf63f0dc....jpg"
+                alt="" />
+            </div>
+            <div class="comment-text">
+              <div class="comment-top">
+                <div class="comment-name">Миколай Максимов</div>
+              </div>
+              <div class="comment-bottom">
+                Чищенням судин займаюся вже років 5 точно. Допомагає
+                залишатися сильним і здоровим. У мене жодної болячки немає,
+                а багато моїх ровесників вже давно в могилі. Я навіть сексом
+                досі займаюся, вибачте за подробиці. Чистити судини
+                потрібно!
+              </div>
+              <div class="comment-date">
+                <script>
+                  var appendNull = function (num) {
+                    return num < 10 ? 0 + num.toString() : num;
+                  };
+                  d = new Date();
+                  p = new Date(d.getTime() - 3 * 86400000);
+                  monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                  document.write(
+                    appendNull(p.getDate()) +
+                    '.' +
+                    monthb[p.getMonth()] +
+                    '.' +
+                    p.getFullYear()
+                  );
+                </script>
+              </div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="ava_block">
+              <img loading="lazy"
+                src="images/53copy-51copy-49copy-47copy-45copy-43copy-41copy-39copy-37copy-35copy-33copy-31copy-28copy-26copy-24copy-107-bd8a866a1ff6307d....jpg"
+                alt="" />
+            </div>
+            <div class="comment-text">
+              <div class="comment-top">
+                <div class="comment-name">Лілія Мельконіна</div>
+              </div>
+              <div class="comment-bottom">
+                Препарат відмінний. Повністю підтверджую! Був тиск постійно
+                140 на 90. Жила з ним кілька років. Після курсу прийому тиск
+                став 125 на 85. Здоров'я покращилося в рази. <br />
+                <img loading="lazy" src="images/comm2.jpg" style="max-width: 350px; width: 100%; margin-top: 15px" />
+              </div>
+              <div class="comment-date">
+                <script>
+                  var appendNull = function (num) {
+                    return num < 10 ? 0 + num.toString() : num;
+                  };
+                  d = new Date();
+                  p = new Date(d.getTime() - 3 * 86400000);
+                  monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                  document.write(
+                    appendNull(p.getDate()) +
+                    '.' +
+                    monthb[p.getMonth()] +
+                    '.' +
+                    p.getFullYear()
+                  );
+                </script>
+              </div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="ava_block">
+              <img loading="lazy"
+                src="images/53copy-51copy-49copy-47copy-45copy-43copy-41copy-39copy-37copy-35copy-33copy-31copy-28copy-26copy-24copy-207-3151d05f824bf421....jpg"
+                alt="" />
+            </div>
+            <div class="comment-text">
+              <div class="comment-top">
+                <div class="comment-name">Ніна Пацуєва</div>
+              </div>
+              <div class="comment-bottom">
+                Лікувала високий тиск цим препаратом. Високий тиск вже давно
+                став моїм супутником життя. Згодом ще додався цукровий
+                діабет і проблеми з нирками. Дуже погана пам'ять і зір. За
+                все життя лікувалася чим могла. Толком нічого не допомогло.
+                Вирішила спробувати <a href="#roulette">Кардіпал</a>. Перший
+                раз виписую через інтернет ліки, але все виявилося просто.
+              </div>
+              <div class="comment-date">
+                <script>
+                  var appendNull = function (num) {
+                    return num < 10 ? 0 + num.toString() : num;
+                  };
+                  d = new Date();
+                  p = new Date(d.getTime() - 4 * 86400000);
+                  monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                  document.write(
+                    appendNull(p.getDate()) +
+                    '.' +
+                    monthb[p.getMonth()] +
+                    '.' +
+                    p.getFullYear()
+                  );
+                </script>
+              </div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="ava_block">
+              <img loading="lazy"
+                src="images/52copy-50copy-48copy-46copy-44copy-42copy-40copy-38copy-36copy-34copy-32copy-30copy-29copy-27copy-25copy-489-32c4401187d4a3a6....jpg"
+                alt="" />
+            </div>
+            <div class="comment-text">
+              <div class="comment-top">
+                <div class="comment-name">Валерій Момотов</div>
+              </div>
+              <div class="comment-bottom">
+                Дякуємо! Дивився передачу про цього хлопчика і препарат
+                нещодавно по телевізору. Там його багато хвалили лікарі.
+              </div>
+              <div class="comment-date">
+                <script>
+                  var appendNull = function (num) {
+                    return num < 10 ? 0 + num.toString() : num;
+                  };
+                  d = new Date();
+                  p = new Date(d.getTime() - 5 * 86400000);
+                  monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                  document.write(
+                    appendNull(p.getDate()) +
+                    '.' +
+                    monthb[p.getMonth()] +
+                    '.' +
+                    p.getFullYear()
+                  );
+                </script>
+              </div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="ava_block">
+              <img loading="lazy" src="images/ol.png" alt="" />
+            </div>
+            <div class="comment-text">
+              <div class="comment-top">
+                <div class="comment-name">Олена Деркач</div>
+              </div>
+              <div class="comment-bottom">
+                Приймаю його вже місяць (з перервами). Тиск повністю
+                нормалізувався, і взагалі стала помітно краще себе почувати.
+                Спасибі, Микита!!
+              </div>
+              <div class="comment-date">
+                <script>
+                  var appendNull = function (num) {
+                    return num < 10 ? 0 + num.toString() : num;
+                  };
+                  d = new Date();
+                  p = new Date(d.getTime() - 5 * 86400000);
+                  monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                  document.write(
+                    appendNull(p.getDate()) +
+                    '.' +
+                    monthb[p.getMonth()] +
+                    '.' +
+                    p.getFullYear()
+                  );
+                </script>
+              </div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="ava_block">
+              <img loading="lazy" src="images/m2.jpg" alt="" />
+            </div>
+            <div class="comment-text">
+              <div class="comment-top">
+                <div class="comment-name">Олена Яковлєва</div>
+              </div>
+              <div class="comment-bottom">
+                Прочитала докладніше про препарат. Вражає!
+              </div>
+              <div class="comment-date">
+                <script>
+                  var appendNull = function (num) {
+                    return num < 10 ? 0 + num.toString() : num;
+                  };
+                  d = new Date();
+                  p = new Date(d.getTime() - 6 * 86400000);
+                  monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                  document.write(
+                    appendNull(p.getDate()) +
+                    '.' +
+                    monthb[p.getMonth()] +
+                    '.' +
+                    p.getFullYear()
+                  );
+                </script>
+              </div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="ava_block">
+              <img loading="lazy"
+                src="images/53copy-51copy-49copy-47copy-45copy-43copy-41copy-39copy-37copy-35copy-33copy-31copy-28copy-26copy-24copy-264-4f048c730dd0c33c....jpg"
+                alt="" />
+            </div>
+            <div class="comment-text">
+              <div class="comment-top">
+                <div class="comment-name">Валентина Аксьонова</div>
+              </div>
+              <div class="comment-bottom">
+                Скажу чесно, це щось! Замовила його відразу, як дізналася
+                про нашого маленького вундеркінда і пільгову програму.
+                Прийшов він за 3 дні (в Київ). Як прийшов відразу стала
+                приймати. Значне поліпшення здоров'я помітила в той же
+                вечір. Тиск став нормальним. Причому нормальним не для мене
+                як гіпертоніка. А нормальним як для звичайної людини. Стан
+                після прийому просто чудовий. З'явилися сили. Покращився
+                сон. Кращі ліки з усіх!
+              </div>
+              <div class="comment-date">
+                <script>
+                  var appendNull = function (num) {
+                    return num < 10 ? 0 + num.toString() : num;
+                  };
+                  d = new Date();
+                  p = new Date(d.getTime() - 6 * 86400000);
+                  monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                  document.write(
+                    appendNull(p.getDate()) +
+                    '.' +
+                    monthb[p.getMonth()] +
+                    '.' +
+                    p.getFullYear()
+                  );
+                </script>
+              </div>
+            </div>
+          </div>
+          <br />
+
+          <div class="dark-block"></div>
+          <style>
+            .dark-block {
+              display: none;
+              position: fixed;
+              height: 100%;
+              width: 100%;
+              background: #000;
+              opacity: 0.6;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              z-index: 10;
+              overflow-x: hidden;
+              overflow-y: auto;
+            }
+
+            .comment_modal * {
+              font-family: 'Roboto', sans-serif !important;
+            }
+
+            .comment_modal {
+              display: none;
+              position: fixed !important;
+              top: 30% !important;
+              left: 50% !important;
+              transform: translate(-50%, -50%) !important;
+              background: #fff !important;
+              padding: 69px !important;
+              width: 800px;
+              z-index: 999 !important;
+              box-shadow: 0 5px 15px rgb(0 0 0 / 50%) !important;
+              -webkit-box-shadow: 0 5px 15px rgb(0 0 0 / 50%) !important;
+            }
+
+            .comment_modal a {
+              position: absolute;
+              right: -15px;
+              top: -15px;
+              width: 38px;
+              height: 38px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background: #fff;
+              border-radius: 50%;
+              cursor: pointer;
+            }
+
+            #popupComment h2 {
+              font-size: 26px;
+              font-weight: 700;
+              margin-bottom: 15px;
+              text-transform: uppercase;
+              color: #333;
+              background: none;
+              border: none;
+              text-align: left;
+            }
+
+            .comment_modal p {
+              color: #404040;
+              font-size: 15px;
+              margin-bottom: 25px;
+            }
+
+            .comment_modal #comment_form label {
+              text-transform: uppercase;
+              font-weight: 700;
+              font-size: 15px;
+              margin-inline: 0;
+              padding-inline: 0;
+              text-align: left;
+            }
+
+            .comment_modal #comment_form .input-block {
+              margin-block: 5px;
+              position: relative;
+            }
+
+            .comment_modal #comment_form input[name='name'] {
+              display: block;
+              margin-top: 5px;
+              width: 100%;
+              margin-bottom: 20px;
+            }
+
+            .comment_modal #comment_form input {
+              width: 100%;
+              height: 50px;
+              border: #00a651 2px solid;
+              padding: 12px 16px 12px 14px;
+              box-sizing: border-box;
+              color: #00a651;
+            }
+
+            .comment_modal #comment_form .input-block button {
+              height: 50px;
+              position: absolute;
+              right: 0;
+              top: 0;
+              font-weight: 700;
+              color: #fff;
+              font-size: 18px;
+              background: #00a651;
+              padding: 14px 20px 13px 28px;
+              box-sizing: border-box;
+              text-align: center;
+              text-transform: uppercase;
+              border: none;
+              border-top-right-radius: 4px;
+              border-bottom-right-radius: 4px;
+              outline: 0;
+              cursor: pointer;
+              box-shadow: none;
+            }
+
+            .comment_modal form span {
+              font-size: 16px;
+              color: #a2adb2;
+            }
+
+            @media screen and (max-width: 1000px) {
+              .comment_modal {
+                display: none;
+                top: 50% !important;
+              }
+            }
+
+            .comment_modal .modal_thx {
+              display: none;
+            }
+
+            .comment_modal .modal_thx h3 {
+              font-size: 1.5rem;
+              font-weight: 700;
+            }
+
+            @media screen and (max-width: 850px) {
+              #popupComment {
+                width: 75%;
+              }
+            }
+
+            @media screen and (max-width: 600px) {
+              #popupComment {
+                padding: 19px !important;
+              }
+
+              #popupComment h2 {
+                font-size: 22px !important;
+                margin-top: 0 !important;
+              }
+
+              #popupComment #comment_form .input-block button {
+                font-size: 13px !important;
+                padding: 10px 15px 10px 15px !important;
+                position: static !important;
+                margin-top: 15px !important;
+              }
+            }
+          </style>
+
+          <div class="fake-comment-wrapper">
+            <form method="post" id="fake-comm-form">
+              <p class="title">Залишити коментар</p>
+              <input type="text" required="required" placeholder="Ваше ім'я" />
+              <textarea type="text" required="required" placeholder="Ваш коментар"></textarea>
+              <div class="input-style">
+                <svg fill="#000000" height="15px" width="15px" version="1.1" id="Capa_1"
+                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewbox="0 0 384.97 384.97" xml:space="preserve">
+                  <g>
+                    <g id="Upload">
+                      <path
+                        d="M372.939,264.641c-6.641,0-12.03,5.39-12.03,12.03v84.212H24.061v-84.212c0-6.641-5.39-12.03-12.03-12.03S0,270.031,0,276.671v96.242c0,6.641,5.39,12.03,12.03,12.03h360.909c6.641,0,12.03-5.39,12.03-12.03v-96.242C384.97,270.019,379.58,264.641,372.939,264.641z">
+                      </path>
+                      <path
+                        d="M117.067,103.507l63.46-62.558v235.71c0,6.641,5.438,12.03,12.151,12.03c6.713,0,12.151-5.39,12.151-12.03V40.95l63.46,62.558c4.74,4.704,12.439,4.704,17.179,0c4.74-4.704,4.752-12.319,0-17.011l-84.2-82.997c-4.692-4.656-12.584-4.608-17.191,0L99.888,86.496c-4.752,4.704-4.74,12.319,0,17.011C104.628,108.211,112.327,108.211,117.067,103.507z">
+                      </path>
+                    </g>
+                  </g>
+                </svg><label for="image-upload">Оберіть файл</label><input id="input-file" name="image-upload"
+                  type="file" accept="image/*" placeholder="Photo" />
+              </div>
+              <p class="file-preview"></p>
+              <button type="submit">Відправити</button>
+            </form>
+            <div id="fake-comm-answer">
+              <p>Дякуємо! Коментар відправлений на модерацію!</p>
+              <p>
+                З метою боротьби зі СПАМ'ом коментар буде опублікований
+                тільки після обробки.
+              </p>
+            </div>
+          </div>
+          <style>
+            .fake-comment-wrapper {
+              font-family: sans-serif !important;
+              width: 100% !important;
+              padding: 30px 20px !important;
+              background-color: #f0f0f0 !important;
+              box-sizing: border-box !important;
+            }
+
+            .fake-comment-wrapper form {
+              display: flex !important;
+              flex-direction: column !important;
+              align-items: flex-start !important;
+              width: 90% !important;
+              margin: 0 auto !important;
+            }
+
+            .fake-comment-wrapper form.hide {
+              display: none !important;
+            }
+
+            .fake-comment-wrapper form .title {
+              margin-bottom: 16px !important;
+              color: red !important;
+              font-family: sans-serif !important;
+              font-size: 24px !important;
+              font-weight: 700 !important;
+              line-height: 28px !important;
+            }
+
+            .fake-comment-wrapper form input,
+            .fake-comment-wrapper .input-style {
+              outline: none !important;
+              width: 100% !important;
+              box-sizing: border-box !important;
+              margin-bottom: 25px !important;
+              padding: 10px 20px !important;
+              font-weight: 100 !important;
+              border: 1px solid red !important;
+              font-family: sans-serif !important;
+              color: #000000 !important;
+              background-color: #ffffff !important;
+              font-size: 16px !important;
+              transition: 0.3s ease !important;
+            }
+
+            .fake-comment-wrapper #fake-comm-form .input-style:hover {
+              background-color: #d6d6d6 !important;
+            }
+
+            .fake-comment-wrapper .input-style label {
+              margin-left: 10px !important;
+            }
+
+            .fake-comment-wrapper .file-preview {
+              margin-bottom: 25px !important;
+            }
+
+            .fake-comment-wrapper .input-style input {
+              position: absolute !important;
+              top: 0 !important;
+              left: 0 !important;
+              right: 0 !important;
+              bottom: 0 !important;
+              margin-bottom: 0 !important;
+              opacity: 0 !important;
+            }
+
+            .fake-comment-wrapper #fake-comm-form .input-style {
+              position: relative !important;
+              max-width: 250px !important;
+              display: flex !important;
+              align-items: center !important;
+              margin-bottom: 15px !important;
+            }
+
+            .fake-comment-wrapper form textarea {
+              outline: none;
+              width: 100% !important;
+              resize: none !important;
+              box-sizing: border-box !important;
+              margin-bottom: 25px !important;
+              padding: 10px 20px !important;
+              font-weight: 100 !important;
+              border: 1px solid red;
+              font-family: sans-serif !important;
+              color: #000000 !important;
+              background-color: #ffffff !important;
+              font-size: 16px !important;
+            }
+
+            .fake-comment-wrapper form button {
+              color: white !important;
+              text-align: center !important;
+              max-width: 280px !important;
+              width: 80% !important;
+              height: 50px !important;
+              border-radius: 25px !important;
+              background-color: red !important;
+              font-family: sans-serif !important;
+              border: none !important;
+              font-size: 18px !important;
+              cursor: pointer !important;
+            }
+
+            .fake-comment-wrapper form button:hover {
+              opacity: 0.8 !important;
+            }
+
+            .fake-comment-wrapper #fake-comm-answer {
+              display: none !important;
+              color: #000000 !important;
+              font-size: 16px !important;
+            }
+
+            .fake-comment-wrapper #fake-comm-answer.show {
+              display: block !important;
+            }
+          </style>
+          <br />
+          <br />
+          <a href="#roulette" style="
+                  text-transform: uppercase;
+                  background: red;
+                  text-decoration: none;
+                  color: #fff;
+                  font-weight: bold;
+                  padding: 15px 0;
+                  margin: auto;
+                  display: block;
+                  max-width: 320px;
+                  width: 100%;
+                  text-align: center;
+                " class="btn-main">Взяти участь у розіграші
+          </a>
+          <br />
+          <p style="text-align: center">
+            <script type="text/javascript">
+              d = new Date();
+              document.write(d.getFullYear());
+            </script>
+            Всі права захищені.
+          </p>
+          <br />
+        </div>
+      </div>
+      <br />
+    </div>
+  </div>
+  <style>
+    .comment-date {
+      margin-top: 10px;
+    }
+
+    .base {
+      padding-top: 0 !important;
+    }
+
+    .headline {
+      font-weight: bold;
+      font-size: 44px;
+      line-height: 48px;
+      margin: 20px 0;
+    }
+
+    .subline {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 38px;
+    }
+
+    input {
+      font-size: 14px;
+    }
+
+    @media (max-width: 1019px) {
+      .base {
+        padding-top: 0 !important;
+      }
+
+      .base h1 {
+        margin-top: 0 !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .headline {
+        font-size: 28px;
+        line-height: 38px;
+      }
+
+      .subline {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: grey !important;
+    }
+
+    @media (max-width: 480px) {
+      .header_line_2 {
+        display: none;
+      }
+
+      .time {
+        margin-bottom: 0 !important;
+      }
+
+      .order_block-doors .door-wrapper .box-door,
+      .order_block-doors .door-wrapper .door {
+        width: 85px !important;
+        height: 180px !important;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .door__sales {
+        top: 75px !important;
+      }
+    }
+
+    @media (max-width: 320px) {
+      .subline {
+        font-size: 17px;
+        line-height: 30px;
+      }
+
+      .size-320 {
+        max-width: 111%;
+        margin-left: -15px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    .comments {
+      border-top: none !important;
+    }
+
+    header {
+      cursor: pointer;
+    }
+
+    .sub-menu__list-item {
+      margin: 0 !important;
+    }
+
+    .header__nav a[data-v-5dc00ec3] {
+      color: #fff !important;
+    }
+
+    .header[data-v-78aef4cc],
+    .sub-menu[data-v-7b50a76b] {
+      position: static !important;
+    }
+
+    @media (max-width: 600px) {
+      .sub-menu__list[data-v-7b50a76b] {
+        padding: 10px 0;
+      }
+
+      .sub-menu[data-v-7b50a76b] {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 796px) {
+      .header {
+        display: block;
+      }
+
+      .header__social[data-v-f15db3fe] {
+        display: none;
+      }
+
+      .header__lang[data-v-a078b5ce] {
+        display: none;
+      }
+
+      .header__search {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 540px) {
+      .header__nav a[data-v-5dc00ec3] {
+        font-size: 11px;
+      }
+
+      .header__programs-item span {}
+
+      .header-medium-bold {
+        color: #fff !important;
+      }
+    }
+
+    @media screen and (max-width: 540px) {
+      .header__nav a[data-v-5dc00ec3] {
+        font-size: 9px;
+        line-height: 0;
+        display: block;
+      }
+
+      .header[data-v-78aef4cc] {
+        padding: 8px 0;
+      }
+    }
+
+    @media (max-width: 433px) {
+      .header__programs-item span {
+        display: none;
+      }
+
+      .header .container {
+        padding: 0 10px;
+      }
+    }
+
+    .header .container {
+      max-width: 1341px;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .header__lang a[data-v-a078b5ce] {
+      font-size: 10px;
+    }
+  </style>
+  <script>
+    var time = 600;
+    var intr;
+    function start_timer() {
+      intr = setInterval(tick, 1000);
+    }
+    function tick() {
+      time = time - 1;
+      var mins = Math.floor(time / 60);
+      var secs = time - mins * 60;
+      if (mins == 0 && secs == 0) {
+        clearInterval(intr);
+      }
+      secs = secs >= 10 ? secs : '0' + secs;
+      $('#min').html('0' + mins);
+      $('#sec').html(secs);
+    }
+    $(document).ready(function () {
+      $('.boxes > div').click(function () {
+        if ($(this).parent().hasClass('boxesfirsttry')) {
+          $('.boxes').removeClass('boxesfirsttry');
+          $(this).addClass('openbox');
+          $(this).find('.try').hide();
+          $(this).find('.opentry').show();
+          setTimeout(function () {
+            $('.sweet-overlay').show();
+            $('.sweet-alert').show();
+          }, 500);
+        } else if ($(this).parent().hasClass('boxeslasttry')) {
+          if (!$(this).hasClass('openbox')) {
+            $(this).find('.try').hide();
+            $(this).find('.opentry').show();
+            $(this).find('.boxtext').css('display', 'block');
+            setTimeout(function () {
+              if ($('.new-comebacker-overlay').is(':visible'))
+                $('.new-comebacker-overlay').hide();
+              $('.new-comebacker-overlay .boxes-is-open').show();
+              $('.new-comebacker-overlay .boxes-not-open').hide();
+              $('.spin-result-wrapper').show();
+              setTimeout(function () {
+                $('#boxesContainer').slideUp(250);
+                setTimeout(function () {
+                  $('.order_block').slideDown(250);
+                }, 500);
+              }, 500);
+            }, 500);
+          }
+        }
+      });
+      $('#update').click(function () {
+        $('.sweet-overlay').hide();
+        $('.sweet-alert').hide();
+        $('.boxes').addClass('boxeslasttry');
+      });
+      $('.pop-up-button, .close-popup').click(function () {
+        $('.spin-result-wrapper').hide();
+        start_timer();
+      });
+    });
+  </script>
+  <script>
+    var attempt = 1;
+    $(function () {
+      $('.try').one('click', function () {
+        if (attempt < 2) {
+          $(this).attr('src', 'img/box_open.png');
+          attempt++;
+          setTimeout(function () {
+            document.getElementById('success02').className += ' animate';
+            document.getElementById('successtip02').className +=
+              ' animateSuccessTip';
+            document.getElementById('modal02').className += ' visible';
+            document.getElementById('cntVal');
+            document.querySelector('.sweet-overlay').style.display =
+              'block';
+          }, 320);
+        } else if (attempt == 2) {
+          attempt++;
+          $(this).attr('src', 'img/box_open-disc.png?v1');
+          $('.spin-result-wrapper').css('display', 'block');
+          setTimeout(function () {
+            $('#boxesContainer').slideUp();
+            $('.order_block').slideDown();
+          }, 2500);
+        }
+      });
+    });
+    var isVibrateSupport = 'vibrate' in navigator;
+    function lastclick() {
+      if (isVibrateSupport > 0) {
+        navigator.vibrate(46);
+      }
+      document.getElementById('modal02').classList.remove('visible');
+      document.querySelector('.sweet-overlay').style.display = 'none';
+    }
+  </script>
+  <script>
+    $(function () {
+      $("a[href^='#']").click(function () {
+        var _href = $(this).attr('href');
+        $('html, body').animate({
+          scrollTop: $(_href).offset().top + 'px',
+        });
+        return false;
+      });
+    });
+    $(function () {
+      $('header').click(function () {
+        $('html, body').animate({
+          scrollTop: $('#form-block').offset().top + 'px',
+        });
+        return false;
+      });
+    });
+  </script>
+  <style type="text/css">
+    .input-error {
+      border-color: red !important;
+      transform: translate3d(0, 0, 0);
+      animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    }
+
+    .phone-error {
+      padding: 10px;
+    }
+
+    @keyframes shake {
+
+      10%,
+      90% {
+        transform: translate3d(-1px, 0, 0);
+      }
+
+      20%,
+      80% {
+        transform: translate3d(2px, 0, 0);
+      }
+
+      30%,
+      50%,
+      70% {
+        transform: translate3d(-3px, 0, 0);
+      }
+
+      40%,
+      60% {
+        transform: translate3d(3px, 0, 0);
+      }
+    }
+  </style>
+</body>
+
+</html>
+
+</html>
